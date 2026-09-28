@@ -135,6 +135,111 @@ const quiz = [
   },
 ];
 
+const englishQuiz = [
+  {
+    title: "The Light of Suwon",
+    prompt: "Who built Hwaseong Fortress and founded a new city?",
+    options: ["Sejong", "King Jeongjo", "Gojong", "Sunjong"],
+    flower: "King Jeongjo",
+    story: (
+      <>
+        King Jeongjo dreamed of a new Suwon.
+        <br />
+        Today, the footsteps of visitors bring
+        <br />
+        new life to Haenggung-dong.
+      </>
+    ),
+  },
+  {
+    title: "The Light of Haenggung",
+    prompt: "What does “haenggung” mean?",
+    options: [
+      "A temporary palace where the king stayed while traveling",
+      "A storehouse for royal treasures",
+      "A space built only for military training",
+      "A market where people bought and sold goods",
+    ],
+    flower: "A temporary palace for the king",
+    story: (
+      <>
+        Hwaseong Haenggung was where King Jeongjo stayed
+        <br />
+        when he visited Suwon. Together with Hwaseong Fortress,
+        <br />
+        it holds an important part of this city’s story.
+        <br />
+        <br />
+        Today, workshops, shops, and everyday moments
+        <br />
+        keep Haenggung-dong’s story growing.
+      </>
+    ),
+  },
+  {
+    title: "The Light of the Workshop",
+    prompt: "Which local workshop makes flowers from paper?",
+    options: [
+      "Marigold",
+      "Nayeong Workshop",
+      "Jongi Nori",
+      "Janggeum Workshop",
+    ],
+    flower: "Jongi Nori",
+    story: (
+      <>
+        Jongi Nori brings the warmth of hanji paper
+        <br />
+        to your fingertips.
+        <br />
+        With a sheet of paper and a little light,
+        <br />
+        you can fold a flower and make it your own.
+        <br />A special workshop in Haenggung-dong.
+      </>
+    ),
+  },
+  {
+    title: "The Light of the Flower Lantern",
+    prompt: "Which flower appears on the Haenggung flower lantern?",
+    options: ["Cherry blossom", "Lotus", "Chrysanthemum", "Peony"],
+    flower: "Peony",
+    story: (
+      <>
+        The peony symbolizes prosperity and abundance.
+        <br />
+        Its hanji lantern carries a wish for new energy
+        <br />
+        to bloom along Haenggung-dong’s workshop streets.
+      </>
+    ),
+  },
+  {
+    title: "The Light of ROKHUS",
+    prompt: "What kind of team is ROKHUS?",
+    options: [
+      "A local business team that turns workshop skills and stories into products and content",
+      "An architecture team that designs buildings in Haenggung-dong",
+      "A museum team that preserves traditional artifacts",
+      "A team that manages transportation in Suwon",
+    ],
+    flower:
+      "A local business team sharing workshop skills and stories through products and content",
+    story: (
+      <>
+        ROKHUS adds new stories to the skills of local workshops.
+        <br />
+        <br />
+        We help people experience and choose each workshop’s
+        <br />
+        unique craft and resources, then preserve them as
+        <br />
+        products and content people can remember.
+      </>
+    ),
+  },
+];
+
 const counterRef = doc(db, "stats", "bloomingRoute");
 const flowerGoal = 100;
 const resultFlowers = [flower1, flower2, flower3, flower4, flower5];
@@ -160,12 +265,21 @@ function Brand({ subtle = false }) {
 
 function App() {
   const [screen, setScreen] = useState("splash");
+  const [language, setLanguage] = useState("ko");
   const [question, setQuestion] = useState(0);
   const [selected, setSelected] = useState(null);
   const [totalCorrect, setTotalCorrect] = useState(0);
+  const [sessionCorrect, setSessionCorrect] = useState(0);
   const [savingAnswer, setSavingAnswer] = useState(false);
   const [answerError, setAnswerError] = useState("");
   const current = quiz[question];
+  const currentCopy = language === "en" ? englishQuiz[question] : current;
+  const isEnglish = language === "en";
+
+  useEffect(() => {
+    document.documentElement.lang = language;
+  }, [language]);
+
   useEffect(
     () =>
       onSnapshot(counterRef, (snapshot) => {
@@ -183,11 +297,10 @@ function App() {
       setSavingAnswer(true);
       try {
         await setDoc(counterRef, { count: increment(1) }, { merge: true });
+        setSessionCorrect((count) => count + 1);
       } catch (error) {
         console.error("Could not save the correct answer to Firestore.", error);
-        setAnswerError(
-          "빛을 저장하지 못했어요. 연결을 확인하고 다시 선택해주세요.",
-        );
+        setAnswerError(true);
         setSavingAnswer(false);
         return;
       }
@@ -208,16 +321,26 @@ function App() {
   function restart() {
     setQuestion(0);
     setSelected(null);
+    setSessionCorrect(0);
     setScreen("splash");
   }
 
   return (
     <main className={`app-shell screen-${screen}`}>
+      <button
+        className="language-toggle"
+        type="button"
+        onClick={() => setLanguage((value) => (value === "ko" ? "en" : "ko"))}
+        aria-label={isEnglish ? "Switch to Korean" : "영어로 전환"}
+        aria-pressed={isEnglish}
+      >
+        {isEnglish ? "한국어" : "EN"}
+      </button>
       {screen === "splash" && (
         <button
           className="splash-screen screen-button"
           onClick={() => setScreen("intro")}
-          aria-label="시작하기"
+          aria-label={isEnglish ? "Start" : "시작하기"}
         >
           <Brand subtle />
           <div className="splash-center">
@@ -230,7 +353,9 @@ function App() {
               <path d="M117 123c-5 9-16 6-26 5l-16-2c-12-1-43-2-56 10-2 2-3 4-3 6 1 2-1 4-4 5-7 1-6-10 3-16 16-11 40-10 53-9 7 1 13 2 18 3l14 2c3 1 6 0 9 0 4-1 6-4 8-8l1 0c0 1 0 3-1 4Z" />
             </svg>
             <div className="app-title">BLOOMING ROUTE</div>
-            <div className="touch">화면을 터치해주세요</div>
+            <div className="touch">
+              {isEnglish ? "Tap the screen to begin" : "화면을 터치해주세요"}
+            </div>
           </div>
         </button>
       )}
@@ -240,21 +365,43 @@ function App() {
           <Brand subtle />
           <section className="intro-copy">
             <h1>
-              행궁동의 <em>꽃</em>을 피워주세요
+              {isEnglish ? (
+                <>
+                  Help the flowers of <em>Haenggung-dong</em> bloom
+                </>
+              ) : (
+                <>
+                  행궁동의 <em>꽃</em>을 피워주세요
+                </>
+              )}
             </h1>
             <p>
-              지금까지 {totalCorrect}개의 빛이 모였습니다.
-              <br />
-              모란꽃이 피려면 {Math.max(flowerGoal - totalCorrect, 0)}개의 빛이
-              더 필요합니다.
-              <br />
-              당신의 참여가 꽃을 완성할 수 있어요.
+              {isEnglish ? (
+                <>
+                  {totalCorrect} lights have been collected so far.
+                  <br />
+                  {Math.max(flowerGoal - totalCorrect, 0)} more are needed for
+                  the peony lantern to bloom.
+                  <br />
+                  Your participation will help it bloom.
+                </>
+              ) : (
+                <>
+                  지금까지 {totalCorrect}개의 빛이 모였습니다.
+                  <br />
+                  모란꽃이 피려면 {Math.max(flowerGoal - totalCorrect, 0)}개의
+                  빛이 더 필요합니다.
+                  <br />
+                  당신의 참여가 꽃을 완성할 수 있어요.
+                </>
+              )}
             </p>
             <button
               className="text-action"
               onClick={() => setScreen("question")}
             >
-              꽃길 시작하기 <span>→</span>
+              {isEnglish ? "Start the flower trail" : "꽃길 시작하기"}{" "}
+              <span>→</span>
             </button>
           </section>
         </>
@@ -264,10 +411,10 @@ function App() {
         <>
           <Brand subtle />
           <section className="question-content">
-            <h1>{current.title}</h1>
-            <p className="question-prompt">{current.prompt}</p>
+            <h1>{currentCopy.title}</h1>
+            <p className="question-prompt">{currentCopy.prompt}</p>
             <div className="answers">
-              {current.options.map((option, index) => (
+              {currentCopy.options.map((option, index) => (
                 <button
                   className="answer"
                   key={option}
@@ -283,12 +430,14 @@ function App() {
             </div>
             {savingAnswer && (
               <p className="counter-message" role="status">
-                빛을 기록하고 있어요…
+                {isEnglish ? "Saving your light…" : "빛을 기록하고 있어요…"}
               </p>
             )}
             {answerError && (
               <p className="counter-error" role="alert">
-                {answerError}
+                {isEnglish
+                  ? "Could not save your light. Check your connection and try again."
+                  : "빛을 저장하지 못했어요. 연결을 확인하고 다시 선택해주세요."}
               </p>
             )}
           </section>
@@ -299,7 +448,7 @@ function App() {
         <button
           className="result-screen screen-button"
           onClick={advance}
-          aria-label="다음으로"
+          aria-label={isEnglish ? "Continue" : "다음으로"}
         >
           <img
             className="result-flower-art"
@@ -308,16 +457,23 @@ function App() {
           />
           <div className="result-heading">
             <h1>
-              {selected === current.answer ? "정답" : "다시 생각해볼까요?"}
+              {selected === current.answer
+                ? isEnglish
+                  ? "Correct"
+                  : "정답"
+                : isEnglish
+                  ? "The correct answer"
+                  : "정답"}
             </h1>
             <div className="result-letter">
               {String.fromCharCode(65 + current.answer)}
             </div>
-            <div className="result-flower">{current.flower}</div>
+            <div className="result-flower">{currentCopy.flower}</div>
           </div>
-          <p className="result-story">{current.story}</p>
+          <p className="result-story">{currentCopy.story}</p>
           <span className="next-hint">
-            화면을 터치해 계속하기 <span>→</span>
+            {isEnglish ? "Tap to continue" : "화면을 터치해 계속하기"}{" "}
+            <span>→</span>
           </span>
           <img
             className="result-flower-background"
@@ -333,19 +489,34 @@ function App() {
         <>
           <Brand subtle />
           <section className="complete-content">
-            <h1>빛 {totalCorrect}조각을 모았습니다</h1>
+            <h1>
+              {isEnglish
+                ? `You’ve collected ${sessionCorrect} lights`
+                : `빛 ${sessionCorrect}조각을 모았습니다`}
+            </h1>
             <p>
-              지금까지 {totalCorrect}개 빛이 모였어요
-              <br />
-              이제 모란꽃등불이 피기까지
-              <br />
-              {Math.max(flowerGoal - totalCorrect, 0)}개의 빛이 남았습니다.
+              {isEnglish ? (
+                <>
+                  {totalCorrect} lights collected so far
+                  <br />
+                  {Math.max(flowerGoal - totalCorrect, 0)} more until the peony
+                  lantern blooms
+                </>
+              ) : (
+                <>
+                  지금까지 {totalCorrect}개 빛이 모였어요
+                  <br />
+                  이제 모란꽃등불이 피기까지
+                  <br />
+                  {Math.max(flowerGoal - totalCorrect, 0)}개의 빛이 남았습니다.
+                </>
+              )}
             </p>
             <div className="complete-flower" aria-hidden="true">
               <img className="complete-flower-art" src={clearFlower} alt="" />
             </div>
             <button className="text-action" onClick={restart}>
-              메인으로 돌아가기
+              {isEnglish ? "Back to the beginning" : "메인으로 돌아가기"}
             </button>
           </section>
         </>

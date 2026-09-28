@@ -39,6 +39,20 @@
 .brand img { display: block; width: 43px; height: 28px; object-fit: contain; }
 .brand-subtle { top: 13px; right: 20px; font-size: 11px; gap: 5px; }
 .brand-subtle img { width: 30px; height: 20px; }
+.language-toggle {
+  position: absolute;
+  top: 14px;
+  left: 18px;
+  z-index: 4;
+  padding: 7px 11px;
+  border: 1px solid #f5c5c9;
+  border-radius: 18px;
+  background: rgba(255, 250, 246, .92);
+  color: #e94565;
+  font: 700 11px/1 Arial, sans-serif;
+  cursor: pointer;
+}
+.language-toggle:focus-visible { outline: 2px solid #e94565; outline-offset: 3px; }
 
 h1, p { margin: 0; }
 h1 { font-size: 22px; line-height: 1.45; font-weight: 700; }
