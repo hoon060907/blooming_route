@@ -12,6 +12,7 @@ import level2 from "./images/level_2.svg";
 import level3 from "./images/level_3.svg";
 import level4 from "./images/level_4.svg";
 import clearFlower from "./images/clear.svg";
+import instaIcon from "./images/insta.svg";
 import "./App.css";
 
 const quiz = [
@@ -624,25 +625,41 @@ function App() {
                 ))}
             </div>
             <p className="complete-links-label">
-              {isEnglish ? "Quick links" : "바로가기"}
+              {isEnglish ? "Links" : "링크"}
             </p>
             <a
-              className="text-action"
-              href="https://blog.naver.com/pride9877"
+              className="text-action instagram-link"
+              href="https://www.instagram.com/rokhus.kr?stkn=MXB4dTAwZTM2bGM1cQ=="
               target="_blank"
               rel="noopener noreferrer"
             >
-              {isEnglish ? "Visit Paper Nori’s Blog" : "종이노리 블로그"}
+              <img
+                className="instagram-icon"
+                src={instaIcon}
+                alt=""
+                aria-hidden="true"
+              />
+              <span>
+                {isEnglish ? "Visit Rokhus Instagram" : "로쿠스 인스타그램"}
+              </span>
             </a>
             <a
-              className="text-action"
-              href="https://smartstore.naver.com/paper_nori?NaPm=ct%3Dmum7l5sr%7Cci%3Dcheckout%7Ctr%3Dds%7Ctrx%3Dnull%7Chk%3D9e6d8cfd47f7211798aedd8017ac999b014c91fe"
+              className="text-action instagram-link"
+              href="https://www.instagram.com/papernori?stkn=NnNodmYybmh3dWhs"
               target="_blank"
               rel="noopener noreferrer"
             >
-              {isEnglish
-                ? "Visit Paper Nori’s Smart Store"
-                : "종이노리 스마트스토어"}
+              <img
+                className="instagram-icon"
+                src={instaIcon}
+                alt=""
+                aria-hidden="true"
+              />
+              <span>
+                {isEnglish
+                  ? "Visit Paper Nori’s Instagram"
+                  : "종이노리 인스타그램"}
+              </span>
             </a>
           </section>
         </>

@@ -1,0 +1,483 @@
+[debug] [2026-09-29T11:23:09.550Z] ----------------------------------------------------------------------
+[debug] [2026-09-29T11:23:09.553Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\hoon\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy --only hosting
+[debug] [2026-09-29T11:23:09.553Z] CLI Version:   15.31.0
+[debug] [2026-09-29T11:23:09.553Z] Platform:      win32
+[debug] [2026-09-29T11:23:09.553Z] Node Version:  v24.14.0
+[debug] [2026-09-29T11:23:09.553Z] Detected Agent: codex_cli
+[debug] [2026-09-29T11:23:09.553Z] Time:          Tue Sep 29 2026 20:23:09 GMT+0900 (한국 표준시)
+[debug] [2026-09-29T11:23:09.553Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2026-09-29T11:23:09.562Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2026-09-29T11:23:11.334Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-09-29T11:23:11.334Z] > authorizing via signed-in user (gihoon0907@gmail.com)
+[debug] [2026-09-29T11:23:11.335Z] [iam] checking project blooming-route for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2026-09-29T11:23:11.335Z] Checked if tokens are valid: false, expires at: 1790410555664
+[debug] [2026-09-29T11:23:11.335Z] Checked if tokens are valid: false, expires at: 1790410555664
+[debug] [2026-09-29T11:23:11.336Z] > refreshing access token with scopes: []
+[debug] [2026-09-29T11:23:11.337Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2026-09-29T11:23:11.337Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2026-09-29T11:23:11.348Z] *** [apiv2] error from fetch(https://firebase-public.firebaseio.com/cli.json, {"headers":{},"method":"GET","dispatcher":{"_events":{},"_eventsCount":0}}): Error: connect ECONNREFUSED 127.0.0.1:9
+[warn] !  Unable to fetch the CLI MOTD and remote config. This is not a fatal error, but may indicate an issue with your network connection. 
+[debug] [2026-09-29T11:23:11.349Z] Failed to fetch MOTD FirebaseError: Failed to make request to https://firebase-public.firebaseio.com/cli.json
+[debug] [2026-09-29T11:23:11.350Z] *** [apiv2] error from fetch(https://www.googleapis.com/oauth2/v3/token, {"headers":{},"method":"POST","dispatcher":{"_events":{},"_eventsCount":0},"body":{"type":"Buffer","data":[45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,101,48,56,102,54,49,102,97,52,99,102,99,101,49,56,54,57,98,97,51,54,101,99,56,13,10,67,111,110,116,101,110,116,45,68,105,115,112,111,115,105,116,105,111,110,58,32,102,111,114,109,45,100,97,116,97,59,32,110,97,109,101,61,34,114,101,102,114,101,115,104,95,116,111,107,101,110,34,13,10,13,10,49,47,47,48,101,69,106,75,67,49,50,65,89,110,106,69,67,103,89,73,65,82,65,65,71,65,52,83,78,119,70,45,76,57,73,114,54,122,119,56,75,86,73,45,67,70,90,84,75,120,87,53,101,105,95,107,53,73,98,115,97,71,67,56,78,117,110,113,108,114,66,122,121,107,121,86,108,118,79,82,48,80,84,80,104,98,90,121,106,118,68,114,75,108,111,53,79,49,107,108,82,69,73,13,10,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,101,48,56,102,54,49,102,97,52,99,102,99,101,49,56,54,57,98,97,51,54,101,99,56,13,10,67,111,110,116,101,110,116,45,68,105,115,112,111,115,105,116,105,111,110,58,32,102,111,114,109,45,100,97,116,97,59,32,110,97,109,101,61,34,99,108,105,101,110,116,95,105,100,34,13,10,13,10,53,54,51,53,56,52,51,51,53,56,54,57,45,102,103,114,104,103,109,100,52,55,98,113,110,101,107,105,106,53,105,56,98,53,112,114,48,51,104,111,56,52,57,101,54,46,97,112,112,115,46,103,111,111,103,108,101,117,115,101,114,99,111,110,116,101,110,116,46,99,111,109,13,10,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,101,48,56,102,54,49,102,97,52,99,102,99,101,49,56,54,57,98,97,51,54,101,99,56,13,10,67,111,110,116,101,110,116,45,68,105,115,112,111,115,105,116,105,111,110,58,32,102,111,114,109,45,100,97,116,97,59,32,110,97,109,101,61,34,99,108,105,101,110,116,95,115,101,99,114,101,116,34,13,10,13,10,106,57,105,86,90,102,83,56,107,107,67,69,70,85,80,97,65,101,74,86,48,115,65,105,13,10,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,101,48,56,102,54,49,102,97,52,99,102,99,101,49,56,54,57,98,97,51,54,101,99,56,13,10,67,111,110,116,101,110,116,45,68,105,115,112,111,115,105,116,105,111,110,58,32,102,111,114,109,45,100,97,116,97,59,32,110,97,109,101,61,34,103,114,97,110,116,95,116,121,112,101,34,13,10,13,10,114,101,102,114,101,115,104,95,116,111,107,101,110,13,10,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,101,48,56,102,54,49,102,97,52,99,102,99,101,49,56,54,57,98,97,51,54,101,99,56,13,10,67,111,110,116,101,110,116,45,68,105,115,112,111,115,105,116,105,111,110,58,32,102,111,114,109,45,100,97,116,97,59,32,110,97,109,101,61,34,115,99,111,112,101,34,13,10,13,10,13,10,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,101,48,56,102,54,49,102,97,52,99,102,99,101,49,56,54,57,98,97,51,54,101,99,56,45,45,13,10]}}): Error: connect ECONNREFUSED 127.0.0.1:9
+[error] Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+[debug] [2026-09-29T11:23:11.351Z] [iam] error while checking permissions, command may fail: Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+[debug] [2026-09-29T11:23:11.352Z] Checked if tokens are valid: false, expires at: 1790410555664
+[debug] [2026-09-29T11:23:11.352Z] Checked if tokens are valid: false, expires at: 1790410555664
+[debug] [2026-09-29T11:23:11.353Z] > refreshing access token with scopes: []
+[debug] [2026-09-29T11:23:11.354Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2026-09-29T11:23:11.354Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2026-09-29T11:23:11.359Z] *** [apiv2] error from fetch(https://www.googleapis.com/oauth2/v3/token, {"headers":{},"method":"POST","dispatcher":{"_events":{},"_eventsCount":0},"body":{"type":"Buffer","data":[45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,48,100,53,57,51,57,55,49,49,50,99,97,100,55,54,49,48,53,53,53,52,53,102,57,13,10,67,111,110,116,101,110,116,45,68,105,115,112,111,115,105,116,105,111,110,58,32,102,111,114,109,45,100,97,116,97,59,32,110,97,109,101,61,34,114,101,102,114,101,115,104,95,116,111,107,101,110,34,13,10,13,10,49,47,47,48,101,69,106,75,67,49,50,65,89,110,106,69,67,103,89,73,65,82,65,65,71,65,52,83,78,119,70,45,76,57,73,114,54,122,119,56,75,86,73,45,67,70,90,84,75,120,87,53,101,105,95,107,53,73,98,115,97,71,67,56,78,117,110,113,108,114,66,122,121,107,121,86,108,118,79,82,48,80,84,80,104,98,90,121,106,118,68,114,75,108,111,53,79,49,107,108,82,69,73,13,10,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,48,100,53,57,51,57,55,49,49,50,99,97,100,55,54,49,48,53,53,53,52,53,102,57,13,10,67,111,110,116,101,110,116,45,68,105,115,112,111,115,105,116,105,111,110,58,32,102,111,114,109,45,100,97,116,97,59,32,110,97,109,101,61,34,99,108,105,101,110,116,95,105,100,34,13,10,13,10,53,54,51,53,56,52,51,51,53,56,54,57,45,102,103,114,104,103,109,100,52,55,98,113,110,101,107,105,106,53,105,56,98,53,112,114,48,51,104,111,56,52,57,101,54,46,97,112,112,115,46,103,111,111,103,108,101,117,115,101,114,99,111,110,116,101,110,116,46,99,111,109,13,10,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,48,100,53,57,51,57,55,49,49,50,99,97,100,55,54,49,48,53,53,53,52,53,102,57,13,10,67,111,110,116,101,110,116,45,68,105,115,112,111,115,105,116,105,111,110,58,32,102,111,114,109,45,100,97,116,97,59,32,110,97,109,101,61,34,99,108,105,101,110,116,95,115,101,99,114,101,116,34,13,10,13,10,106,57,105,86,90,102,83,56,107,107,67,69,70,85,80,97,65,101,74,86,48,115,65,105,13,10,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,48,100,53,57,51,57,55,49,49,50,99,97,100,55,54,49,48,53,53,53,52,53,102,57,13,10,67,111,110,116,101,110,116,45,68,105,115,112,111,115,105,116,105,111,110,58,32,102,111,114,109,45,100,97,116,97,59,32,110,97,109,101,61,34,103,114,97,110,116,95,116,121,112,101,34,13,10,13,10,114,101,102,114,101,115,104,95,116,111,107,101,110,13,10,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,48,100,53,57,51,57,55,49,49,50,99,97,100,55,54,49,48,53,53,53,52,53,102,57,13,10,67,111,110,116,101,110,116,45,68,105,115,112,111,115,105,116,105,111,110,58,32,102,111,114,109,45,100,97,116,97,59,32,110,97,109,101,61,34,115,99,111,112,101,34,13,10,13,10,13,10,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,48,100,53,57,51,57,55,49,49,50,99,97,100,55,54,49,48,53,53,53,52,53,102,57,45,45,13,10]}}): Error: connect ECONNREFUSED 127.0.0.1:9
+[error] Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+[debug] [2026-09-29T11:23:11.360Z] Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+[error] 
+[error] Error: Assertion failed: resolving hosting target of a site with no site name or target name. This should have caused an error earlier
+[debug] [2026-09-29T11:23:11.641Z] Error: EPERM: operation not permitted, open 'C:\Users\hoon\.config\configstore\firebase-tools.json.1339117526'
+    at Object.openSync (node:fs:560:18)
+    at writeFile.writeFileSync [as sync] (C:\Users\hoon\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\write-file-atomic\index.js:205:13)
+    at set all (C:\Users\hoon\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\configstore\index.js:61:20)
+    at Configstore.delete (C:\Users\hoon\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\configstore\index.js:101:12)
+    at process.<anonymous> (C:\Users\hoon\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\cli.js:95:45)
+    at process.emit (node:events:520:35)
+    at process.exit (node:internal/process/per_thread:236:15)
+    at Timeout._onTimeout (C:\Users\hoon\AppData\Roaming\npm\node_modules\firebase-tools\lib\errorOut.js:20:17)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2026-09-29T11:23:59.056Z] ----------------------------------------------------------------------
+[debug] [2026-09-29T11:23:59.059Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\hoon\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy --only hosting
+[debug] [2026-09-29T11:23:59.059Z] CLI Version:   15.31.0
+[debug] [2026-09-29T11:23:59.059Z] Platform:      win32
+[debug] [2026-09-29T11:23:59.059Z] Node Version:  v24.14.0
+[debug] [2026-09-29T11:23:59.059Z] Detected Agent: codex_cli
+[debug] [2026-09-29T11:23:59.060Z] Time:          Tue Sep 29 2026 20:23:59 GMT+0900 (한국 표준시)
+[debug] [2026-09-29T11:23:59.060Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2026-09-29T11:23:59.068Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2026-09-29T11:23:59.974Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-09-29T11:23:59.974Z] > authorizing via signed-in user (gihoon0907@gmail.com)
+[debug] [2026-09-29T11:23:59.974Z] [iam] checking project blooming-route for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2026-09-29T11:23:59.975Z] Checked if tokens are valid: false, expires at: 1790410555664
+[debug] [2026-09-29T11:23:59.975Z] Checked if tokens are valid: false, expires at: 1790410555664
+[debug] [2026-09-29T11:23:59.975Z] > refreshing access token with scopes: []
+[debug] [2026-09-29T11:23:59.976Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2026-09-29T11:23:59.976Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2026-09-29T11:24:00.178Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2026-09-29T11:24:00.178Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2026-09-29T11:24:00.190Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/blooming-route:testIamPermissions [none]
+[debug] [2026-09-29T11:24:00.191Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/blooming-route:testIamPermissions  x-goog-user-project=blooming-route
+[debug] [2026-09-29T11:24:00.191Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/blooming-route:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2026-09-29T11:24:00.360Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+[debug] [2026-09-29T11:24:00.360Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
+[debug] [2026-09-29T11:24:00.426Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/blooming-route:testIamPermissions 200
+[debug] [2026-09-29T11:24:00.426Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/blooming-route:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2026-09-29T11:24:00.427Z] Checked if tokens are valid: true, expires at: 1790684639178
+[debug] [2026-09-29T11:24:00.427Z] Checked if tokens are valid: true, expires at: 1790684639178
+[debug] [2026-09-29T11:24:00.427Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/blooming-route [none]
+[debug] [2026-09-29T11:24:00.892Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/blooming-route 200
+[debug] [2026-09-29T11:24:00.892Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/blooming-route {"projectId":"blooming-route","projectNumber":"916983121837","displayName":"Blooming Route","name":"projects/blooming-route","resources":{"hostingSite":"blooming-route"},"state":"ACTIVE","labels":{"firebase":"enabled"},"etag":"1_ecf2683b-40ed-45f0-b785-9f2a460c1c68"}
+[info] 
+[info] === Deploying to 'blooming-route'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2026-09-29T11:24:00.894Z] Checked if tokens are valid: true, expires at: 1790684639178
+[debug] [2026-09-29T11:24:00.894Z] Checked if tokens are valid: true, expires at: 1790684639178
+[debug] [2026-09-29T11:24:00.894Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/blooming-route/sites/blooming-route [none]
+[debug] [2026-09-29T11:24:01.774Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/blooming-route/sites/blooming-route 200
+[debug] [2026-09-29T11:24:01.774Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/blooming-route/sites/blooming-route {"name":"projects/blooming-route/sites/blooming-route","defaultUrl":"https://blooming-route.web.app","type":"DEFAULT_SITE"}
+[debug] [2026-09-29T11:24:01.775Z] Checked if tokens are valid: true, expires at: 1790684639178
+[debug] [2026-09-29T11:24:01.775Z] Checked if tokens are valid: true, expires at: 1790684639178
+[debug] [2026-09-29T11:24:01.775Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/blooming-route/versions [none]
+[debug] [2026-09-29T11:24:01.775Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/blooming-route/versions {"status":"CREATED","labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2026-09-29T11:24:02.839Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/blooming-route/versions 200
+[debug] [2026-09-29T11:24:02.839Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/blooming-route/versions {"name":"projects/916983121837/sites/blooming-route/versions/bf9467feb01cc154","status":"CREATED","config":{},"labels":{"deployment-tool":"cli-firebase"}}
+[info] i  hosting[blooming-route]: beginning deploy... 
+[info] i  hosting[blooming-route]: found 26 files in build 
+[debug] [2026-09-29T11:24:02.850Z] [hosting] uploading with 200 concurrency
+[debug] [2026-09-29T11:24:03.319Z] Checked if tokens are valid: true, expires at: 1790684639178
+[debug] [2026-09-29T11:24:03.319Z] Checked if tokens are valid: true, expires at: 1790684639178
+[debug] [2026-09-29T11:24:03.320Z] [hosting] hash cache [YnVpbGQ] stored for 26 files
+[debug] [2026-09-29T11:24:03.320Z] [hosting][hash queue][FINAL] {"max":465,"min":1,"avg":42.46153846153846,"active":0,"complete":26,"success":26,"errored":0,"retried":0,"total":26,"elapsed":467}
+[debug] [2026-09-29T11:24:03.320Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/916983121837/sites/blooming-route/versions/bf9467feb01cc154:populateFiles [none]
+[debug] [2026-09-29T11:24:03.321Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/916983121837/sites/blooming-route/versions/bf9467feb01cc154:populateFiles {"files":{"/robots.txt":"bfe106a3fb878dc83461c86818bf74fc1bdc7f28538ba613cd3e775516ce8b49","/manifest.json":"ee04fb47e525c67d8424ffe9b4d8a8a24e434504478afca4e0ca602146836d4c","/logo512.png":"212b102aa09e51b3b3e06647e81f7801a61333e171f6582e8124379aabccb41d","/logo192.png":"79e2b749561016bc8af300ea19f48347ceed3cb1a54f48ae456172eca45e08f0","/favicon.ico":"27edce7be5922cf0bef7d4136f69b5bfbdd5bf8c13c7b026f71187d41a00aa7d","/index.html":"72075058e95d1eee3377cf75a31cb4779461e3bde5011345fcad32d6033cd37e","/asset-manifest.json":"b6214f61000394de3b0b89f66947b80592967cbb03d9b7675aea753aec8245d0","/static/js/453.109c0761.chunk.js.map":"0d2ea59f5233538067a0d8766e46a37b63e7006712c500bbae157899672fa730","/static/js/main.e5d15b35.js.LICENSE.txt":"700b2a57c29cec3af59bf33ca7272fb8a0721bc8035f3ba9d76298c183081131","/static/js/453.109c0761.chunk.js":"2222fc8cd621e75312a464ccccb53a2bebbfa5a53f0b5a36737a89da597a2ace","/static/css/main.5042d020.css":"ec034b73f792a23ec8fff396301b665112c86f04b998286c43c9c057a0bd6e12","/static/css/main.5042d020.css.map":"1a76d08408b380b71d5d0d8dfdfe44771f02891d757a31a5b40249ff741e406c","/icon.svg":"8238016bb0cdaee1e266f9364abaefd4b99169cc1132e247fe47a843d32a1ece","/static/media/logo.eb8405db879f494f7a2a275fc7257a66.svg":"d587ef71a601d9390c2ae8299fb2bdf3d21a5642a379eed2ca3e0ca190f8f7d1","/static/media/flower_2.6745d25a9522a97ffdc9a325905ad714.svg":"cb169eb0e747d9f0514d3b5d4e979eebd93484fd77c7b36e05351e5e68db09cb","/static/media/flower_3.32fbe4a89c4a1e547e474cf3110fa541.svg":"09875ce4100b4f46b99f52cc765151833ecab350aa79d7cf791220a477c86875","/static/media/flower_5.312cf333f30f169451150e632c9c9add.svg":"5565f82aaac81ad515d04b23734e0db029bbb06ed05a45000735e46a191a5f17","/static/media/flower_4.2c88ec79aad1115bd70d3448287506a0.svg":"0d5baa4e1ea2960f90e42b2a041c83319b14cec4ddb9ee39b91836c3c9697d5c","/static/media/flower_1.053cc3d942f4cdf8247b048d4e13df45.svg":"f05f59379c1950d0e997149a12fbf205f29096c554ab7f92fe52de1274500253","/static/js/main.e5d15b35.js":"e3e7a950a70031a0119bb9d3046a29e22d741451fd1182b596ffe4cfbc08dac8","/static/media/clear.cf2fa84b36243c8250541ad695059a04.svg":"b064752ae61ea27f5f7549502b9181a20b8f3e0a704069a29f0e649ae4bdf1a3","/static/media/level_3.edd3531d81ffca9709498bf76597af76.svg":"b32d86c7f5663c026a13742c41428f37f69e478269207a24e11457afbb5d9ecd","/static/media/level_4.62ed3392e1ce90c904c82fb6d68955f8.svg":"eafe37a6e032375228558ef8fa324d5a0230c30dc16cd93c446eb307ad8760af","/static/media/level_1.d4ab22c5c50914bf88ce1beaefee1064.svg":"bd83e63dc696702f2df87aecf0b2d9ceeda3e3c7b71c587283c908e5f1542cf2","/static/media/level_2.a0593645b175f86ec07125d416a3c715.svg":"844cb13eb2ea9c4f413524b5c677ef5ef32e1ac6f0b3aedfe3e9a69b75ab79bc","/static/js/main.e5d15b35.js.map":"12834abb5f91ddd56692e05b79de8ee59c4a6f046d866ccb03d22594f0127ec9"}}
+[debug] [2026-09-29T11:24:03.995Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/916983121837/sites/blooming-route/versions/bf9467feb01cc154:populateFiles 200
+[debug] [2026-09-29T11:24:03.995Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/916983121837/sites/blooming-route/versions/bf9467feb01cc154:populateFiles {"uploadRequiredHashes":["b6214f61000394de3b0b89f66947b80592967cbb03d9b7675aea753aec8245d0","b32d86c7f5663c026a13742c41428f37f69e478269207a24e11457afbb5d9ecd","8238016bb0cdaee1e266f9364abaefd4b99169cc1132e247fe47a843d32a1ece","72075058e95d1eee3377cf75a31cb4779461e3bde5011345fcad32d6033cd37e","e3e7a950a70031a0119bb9d3046a29e22d741451fd1182b596ffe4cfbc08dac8","bd83e63dc696702f2df87aecf0b2d9ceeda3e3c7b71c587283c908e5f1542cf2","1a76d08408b380b71d5d0d8dfdfe44771f02891d757a31a5b40249ff741e406c","b064752ae61ea27f5f7549502b9181a20b8f3e0a704069a29f0e649ae4bdf1a3","844cb13eb2ea9c4f413524b5c677ef5ef32e1ac6f0b3aedfe3e9a69b75ab79bc","12834abb5f91ddd56692e05b79de8ee59c4a6f046d866ccb03d22594f0127ec9","ec034b73f792a23ec8fff396301b665112c86f04b998286c43c9c057a0bd6e12"],"uploadUrl":"https://upload-firebasehosting.googleapis.com/upload/sites/blooming-route/versions/bf9467feb01cc154/files"}
+[debug] [2026-09-29T11:24:03.995Z] Checked if tokens are valid: true, expires at: 1790684639178
+[debug] [2026-09-29T11:24:03.995Z] Checked if tokens are valid: true, expires at: 1790684639178
+[debug] [2026-09-29T11:24:03.995Z] Checked if tokens are valid: true, expires at: 1790684639178
+[debug] [2026-09-29T11:24:03.995Z] Checked if tokens are valid: true, expires at: 1790684639178
+[debug] [2026-09-29T11:24:03.996Z] Checked if tokens are valid: true, expires at: 1790684639178
+[debug] [2026-09-29T11:24:03.996Z] Checked if tokens are valid: true, expires at: 1790684639178
+[debug] [2026-09-29T11:24:03.996Z] Checked if tokens are valid: true, expires at: 1790684639178
+[debug] [2026-09-29T11:24:03.996Z] Checked if tokens are valid: true, expires at: 1790684639178
+[debug] [2026-09-29T11:24:03.996Z] Checked if tokens are valid: true, expires at: 1790684639178
+[debug] [2026-09-29T11:24:03.996Z] Checked if tokens are valid: true, expires at: 1790684639178
+[debug] [2026-09-29T11:24:03.996Z] Checked if tokens are valid: true, expires at: 1790684639178
+[debug] [2026-09-29T11:24:03.996Z] Checked if tokens are valid: true, expires at: 1790684639178
+[debug] [2026-09-29T11:24:03.996Z] Checked if tokens are valid: true, expires at: 1790684639178
+[debug] [2026-09-29T11:24:03.996Z] Checked if tokens are valid: true, expires at: 1790684639178
+[debug] [2026-09-29T11:24:03.996Z] Checked if tokens are valid: true, expires at: 1790684639178
+[debug] [2026-09-29T11:24:03.996Z] Checked if tokens are valid: true, expires at: 1790684639178
+[debug] [2026-09-29T11:24:03.996Z] Checked if tokens are valid: true, expires at: 1790684639178
+[debug] [2026-09-29T11:24:03.996Z] Checked if tokens are valid: true, expires at: 1790684639178
+[debug] [2026-09-29T11:24:03.996Z] Checked if tokens are valid: true, expires at: 1790684639178
+[debug] [2026-09-29T11:24:03.996Z] Checked if tokens are valid: true, expires at: 1790684639178
+[debug] [2026-09-29T11:24:03.996Z] Checked if tokens are valid: true, expires at: 1790684639178
+[debug] [2026-09-29T11:24:03.996Z] Checked if tokens are valid: true, expires at: 1790684639178
+[debug] [2026-09-29T11:24:03.996Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/blooming-route/versions/bf9467feb01cc154/files/b6214f61000394de3b0b89f66947b80592967cbb03d9b7675aea753aec8245d0 [none]
+[debug] [2026-09-29T11:24:03.997Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/blooming-route/versions/bf9467feb01cc154/files/b6214f61000394de3b0b89f66947b80592967cbb03d9b7675aea753aec8245d0 [stream]
+[debug] [2026-09-29T11:24:03.997Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/blooming-route/versions/bf9467feb01cc154/files/b32d86c7f5663c026a13742c41428f37f69e478269207a24e11457afbb5d9ecd [none]
+[debug] [2026-09-29T11:24:03.997Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/blooming-route/versions/bf9467feb01cc154/files/b32d86c7f5663c026a13742c41428f37f69e478269207a24e11457afbb5d9ecd [stream]
+[debug] [2026-09-29T11:24:03.998Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/blooming-route/versions/bf9467feb01cc154/files/8238016bb0cdaee1e266f9364abaefd4b99169cc1132e247fe47a843d32a1ece [none]
+[debug] [2026-09-29T11:24:03.998Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/blooming-route/versions/bf9467feb01cc154/files/8238016bb0cdaee1e266f9364abaefd4b99169cc1132e247fe47a843d32a1ece [stream]
+[debug] [2026-09-29T11:24:03.998Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/blooming-route/versions/bf9467feb01cc154/files/72075058e95d1eee3377cf75a31cb4779461e3bde5011345fcad32d6033cd37e [none]
+[debug] [2026-09-29T11:24:03.998Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/blooming-route/versions/bf9467feb01cc154/files/72075058e95d1eee3377cf75a31cb4779461e3bde5011345fcad32d6033cd37e [stream]
+[debug] [2026-09-29T11:24:03.998Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/blooming-route/versions/bf9467feb01cc154/files/e3e7a950a70031a0119bb9d3046a29e22d741451fd1182b596ffe4cfbc08dac8 [none]
+[debug] [2026-09-29T11:24:03.998Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/blooming-route/versions/bf9467feb01cc154/files/e3e7a950a70031a0119bb9d3046a29e22d741451fd1182b596ffe4cfbc08dac8 [stream]
+[debug] [2026-09-29T11:24:03.999Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/blooming-route/versions/bf9467feb01cc154/files/bd83e63dc696702f2df87aecf0b2d9ceeda3e3c7b71c587283c908e5f1542cf2 [none]
+[debug] [2026-09-29T11:24:03.999Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/blooming-route/versions/bf9467feb01cc154/files/bd83e63dc696702f2df87aecf0b2d9ceeda3e3c7b71c587283c908e5f1542cf2 [stream]
+[debug] [2026-09-29T11:24:03.999Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/blooming-route/versions/bf9467feb01cc154/files/1a76d08408b380b71d5d0d8dfdfe44771f02891d757a31a5b40249ff741e406c [none]
+[debug] [2026-09-29T11:24:03.999Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/blooming-route/versions/bf9467feb01cc154/files/1a76d08408b380b71d5d0d8dfdfe44771f02891d757a31a5b40249ff741e406c [stream]
+[debug] [2026-09-29T11:24:04.000Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/blooming-route/versions/bf9467feb01cc154/files/b064752ae61ea27f5f7549502b9181a20b8f3e0a704069a29f0e649ae4bdf1a3 [none]
+[debug] [2026-09-29T11:24:04.000Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/blooming-route/versions/bf9467feb01cc154/files/b064752ae61ea27f5f7549502b9181a20b8f3e0a704069a29f0e649ae4bdf1a3 [stream]
+[debug] [2026-09-29T11:24:04.000Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/blooming-route/versions/bf9467feb01cc154/files/844cb13eb2ea9c4f413524b5c677ef5ef32e1ac6f0b3aedfe3e9a69b75ab79bc [none]
+[debug] [2026-09-29T11:24:04.000Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/blooming-route/versions/bf9467feb01cc154/files/844cb13eb2ea9c4f413524b5c677ef5ef32e1ac6f0b3aedfe3e9a69b75ab79bc [stream]
+[debug] [2026-09-29T11:24:04.000Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/blooming-route/versions/bf9467feb01cc154/files/12834abb5f91ddd56692e05b79de8ee59c4a6f046d866ccb03d22594f0127ec9 [none]
+[debug] [2026-09-29T11:24:04.000Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/blooming-route/versions/bf9467feb01cc154/files/12834abb5f91ddd56692e05b79de8ee59c4a6f046d866ccb03d22594f0127ec9 [stream]
+[debug] [2026-09-29T11:24:04.001Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/blooming-route/versions/bf9467feb01cc154/files/ec034b73f792a23ec8fff396301b665112c86f04b998286c43c9c057a0bd6e12 [none]
+[debug] [2026-09-29T11:24:04.001Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/blooming-route/versions/bf9467feb01cc154/files/ec034b73f792a23ec8fff396301b665112c86f04b998286c43c9c057a0bd6e12 [stream]
+[debug] [2026-09-29T11:24:04.006Z] [hosting][populate queue][FINAL] {"max":677,"min":677,"avg":677,"active":0,"complete":1,"success":1,"errored":0,"retried":0,"total":1,"elapsed":687}
+[debug] [2026-09-29T11:24:04.006Z] [hosting] uploads queued: 11
+[info] i  hosting: uploading new files [0/11] (0%) 
+[debug] [2026-09-29T11:24:05.249Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/blooming-route/versions/bf9467feb01cc154/files/b6214f61000394de3b0b89f66947b80592967cbb03d9b7675aea753aec8245d0 200
+[debug] [2026-09-29T11:24:05.249Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/blooming-route/versions/bf9467feb01cc154/files/b6214f61000394de3b0b89f66947b80592967cbb03d9b7675aea753aec8245d0 [stream]
+[debug] [2026-09-29T11:24:05.416Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/blooming-route/versions/bf9467feb01cc154/files/1a76d08408b380b71d5d0d8dfdfe44771f02891d757a31a5b40249ff741e406c 200
+[debug] [2026-09-29T11:24:05.416Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/blooming-route/versions/bf9467feb01cc154/files/1a76d08408b380b71d5d0d8dfdfe44771f02891d757a31a5b40249ff741e406c [stream]
+[debug] [2026-09-29T11:24:05.417Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/blooming-route/versions/bf9467feb01cc154/files/8238016bb0cdaee1e266f9364abaefd4b99169cc1132e247fe47a843d32a1ece 200
+[debug] [2026-09-29T11:24:05.417Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/blooming-route/versions/bf9467feb01cc154/files/8238016bb0cdaee1e266f9364abaefd4b99169cc1132e247fe47a843d32a1ece [stream]
+[debug] [2026-09-29T11:24:05.419Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/blooming-route/versions/bf9467feb01cc154/files/72075058e95d1eee3377cf75a31cb4779461e3bde5011345fcad32d6033cd37e 200
+[debug] [2026-09-29T11:24:05.419Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/blooming-route/versions/bf9467feb01cc154/files/72075058e95d1eee3377cf75a31cb4779461e3bde5011345fcad32d6033cd37e [stream]
+[debug] [2026-09-29T11:24:05.565Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/blooming-route/versions/bf9467feb01cc154/files/e3e7a950a70031a0119bb9d3046a29e22d741451fd1182b596ffe4cfbc08dac8 200
+[debug] [2026-09-29T11:24:05.565Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/blooming-route/versions/bf9467feb01cc154/files/e3e7a950a70031a0119bb9d3046a29e22d741451fd1182b596ffe4cfbc08dac8 [stream]
+[debug] [2026-09-29T11:24:05.583Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/blooming-route/versions/bf9467feb01cc154/files/ec034b73f792a23ec8fff396301b665112c86f04b998286c43c9c057a0bd6e12 200
+[debug] [2026-09-29T11:24:05.583Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/blooming-route/versions/bf9467feb01cc154/files/ec034b73f792a23ec8fff396301b665112c86f04b998286c43c9c057a0bd6e12 [stream]
+[debug] [2026-09-29T11:24:05.594Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/blooming-route/versions/bf9467feb01cc154/files/b064752ae61ea27f5f7549502b9181a20b8f3e0a704069a29f0e649ae4bdf1a3 200
+[debug] [2026-09-29T11:24:05.594Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/blooming-route/versions/bf9467feb01cc154/files/b064752ae61ea27f5f7549502b9181a20b8f3e0a704069a29f0e649ae4bdf1a3 [stream]
+[debug] [2026-09-29T11:24:05.794Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/blooming-route/versions/bf9467feb01cc154/files/bd83e63dc696702f2df87aecf0b2d9ceeda3e3c7b71c587283c908e5f1542cf2 200
+[debug] [2026-09-29T11:24:05.794Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/blooming-route/versions/bf9467feb01cc154/files/bd83e63dc696702f2df87aecf0b2d9ceeda3e3c7b71c587283c908e5f1542cf2 [stream]
+[debug] [2026-09-29T11:24:05.915Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/blooming-route/versions/bf9467feb01cc154/files/b32d86c7f5663c026a13742c41428f37f69e478269207a24e11457afbb5d9ecd 200
+[debug] [2026-09-29T11:24:05.916Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/blooming-route/versions/bf9467feb01cc154/files/b32d86c7f5663c026a13742c41428f37f69e478269207a24e11457afbb5d9ecd [stream]
+[debug] [2026-09-29T11:24:06.178Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/blooming-route/versions/bf9467feb01cc154/files/12834abb5f91ddd56692e05b79de8ee59c4a6f046d866ccb03d22594f0127ec9 200
+[debug] [2026-09-29T11:24:06.179Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/blooming-route/versions/bf9467feb01cc154/files/12834abb5f91ddd56692e05b79de8ee59c4a6f046d866ccb03d22594f0127ec9 [stream]
+[info] i  hosting: uploading new files [10/11] (90%) 
+[debug] [2026-09-29T11:24:06.928Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/blooming-route/versions/bf9467feb01cc154/files/844cb13eb2ea9c4f413524b5c677ef5ef32e1ac6f0b3aedfe3e9a69b75ab79bc 200
+[debug] [2026-09-29T11:24:06.928Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/blooming-route/versions/bf9467feb01cc154/files/844cb13eb2ea9c4f413524b5c677ef5ef32e1ac6f0b3aedfe3e9a69b75ab79bc [stream]
+[debug] [2026-09-29T11:24:06.928Z] [hosting][upload queue][FINAL] {"max":2932,"min":1254,"avg":1737.090909090909,"active":0,"complete":11,"success":11,"errored":0,"retried":0,"total":11,"elapsed":2933}
+[info] i  hosting: upload complete 
+[info] +  hosting[blooming-route]: file upload complete 
+[debug] [2026-09-29T11:24:06.929Z] [hosting] deploy completed after 4087ms
+[debug] [2026-09-29T11:24:06.929Z] [
+  {
+    "config": {
+      "public": "build",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ],
+      "site": "blooming-route"
+    },
+    "version": "projects/916983121837/sites/blooming-route/versions/bf9467feb01cc154"
+  }
+]
+[info] i  hosting[blooming-route]: finalizing version... 
+[debug] [2026-09-29T11:24:06.931Z] Checked if tokens are valid: true, expires at: 1790684639178
+[debug] [2026-09-29T11:24:06.931Z] Checked if tokens are valid: true, expires at: 1790684639178
+[debug] [2026-09-29T11:24:06.931Z] >>> [apiv2][query] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/blooming-route/versions/bf9467feb01cc154 updateMask=status%2Cconfig
+[debug] [2026-09-29T11:24:06.931Z] >>> [apiv2][body] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/blooming-route/versions/bf9467feb01cc154 {"status":"FINALIZED","config":{"rewrites":[{"glob":"**","path":"/index.html"}]}}
+[debug] [2026-09-29T11:24:07.689Z] <<< [apiv2][status] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/blooming-route/versions/bf9467feb01cc154 200
+[debug] [2026-09-29T11:24:07.689Z] <<< [apiv2][body] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/blooming-route/versions/bf9467feb01cc154 {"name":"projects/916983121837/sites/blooming-route/versions/bf9467feb01cc154","status":"FINALIZED","config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"},"createTime":"2026-09-29T11:24:01.143890Z","createUser":{"email":"gihoon0907@gmail.com"},"finalizeTime":"2026-09-29T11:24:06.562208Z","finalizeUser":{"email":"gihoon0907@gmail.com"}}
+[debug] [2026-09-29T11:24:07.689Z] [hosting] finalized version for blooming-route:[object Object]
+[info] +  hosting[blooming-route]: version finalized 
+[info] i  hosting[blooming-route]: releasing new version... 
+[debug] [2026-09-29T11:24:07.690Z] Checked if tokens are valid: true, expires at: 1790684639178
+[debug] [2026-09-29T11:24:07.690Z] Checked if tokens are valid: true, expires at: 1790684639178
+[debug] [2026-09-29T11:24:07.690Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/blooming-route/channels/live/releases versionName=projects%2F916983121837%2Fsites%2Fblooming-route%2Fversions%2Fbf9467feb01cc154
+[debug] [2026-09-29T11:24:07.690Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/blooming-route/channels/live/releases {}
+[debug] [2026-09-29T11:24:08.416Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/blooming-route/channels/live/releases 200
+[debug] [2026-09-29T13:38:59.789Z] ----------------------------------------------------------------------
+[debug] [2026-09-29T13:38:59.791Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\hoon\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy --only hosting
+[debug] [2026-09-29T13:38:59.791Z] CLI Version:   15.31.0
+[debug] [2026-09-29T13:38:59.792Z] Platform:      win32
+[debug] [2026-09-29T13:38:59.792Z] Node Version:  v24.14.0
+[debug] [2026-09-29T13:38:59.792Z] Detected Agent: codex_cli
+[debug] [2026-09-29T13:38:59.792Z] Time:          Tue Sep 29 2026 22:38:59 GMT+0900 (한국 표준시)
+[debug] [2026-09-29T13:38:59.792Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2026-09-29T13:39:01.365Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-09-29T13:39:01.365Z] > authorizing via signed-in user (gihoon0907@gmail.com)
+[debug] [2026-09-29T13:39:01.365Z] [iam] checking project blooming-route for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2026-09-29T13:39:01.372Z] Checked if tokens are valid: false, expires at: 1790684639178
+[debug] [2026-09-29T13:39:01.372Z] Checked if tokens are valid: false, expires at: 1790684639178
+[debug] [2026-09-29T13:39:01.373Z] > refreshing access token with scopes: []
+[debug] [2026-09-29T13:39:01.374Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2026-09-29T13:39:01.374Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2026-09-29T13:39:01.575Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2026-09-29T13:39:01.575Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2026-09-29T13:39:01.587Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/blooming-route:testIamPermissions [none]
+[debug] [2026-09-29T13:39:01.588Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/blooming-route:testIamPermissions  x-goog-user-project=blooming-route
+[debug] [2026-09-29T13:39:01.588Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/blooming-route:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2026-09-29T13:39:01.833Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/blooming-route:testIamPermissions 200
+[debug] [2026-09-29T13:39:01.833Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/blooming-route:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2026-09-29T13:39:01.834Z] Checked if tokens are valid: true, expires at: 1790692740575
+[debug] [2026-09-29T13:39:01.834Z] Checked if tokens are valid: true, expires at: 1790692740575
+[debug] [2026-09-29T13:39:01.834Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/blooming-route [none]
+[debug] [2026-09-29T13:39:02.260Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/blooming-route 200
+[debug] [2026-09-29T13:39:02.261Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/blooming-route {"projectId":"blooming-route","projectNumber":"916983121837","displayName":"Blooming Route","name":"projects/blooming-route","resources":{"hostingSite":"blooming-route"},"state":"ACTIVE","labels":{"firebase":"enabled"},"etag":"1_ecf2683b-40ed-45f0-b785-9f2a460c1c68"}
+[info] 
+[info] === Deploying to 'blooming-route'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2026-09-29T13:39:02.263Z] Checked if tokens are valid: true, expires at: 1790692740575
+[debug] [2026-09-29T13:39:02.263Z] Checked if tokens are valid: true, expires at: 1790692740575
+[debug] [2026-09-29T13:39:02.263Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/blooming-route/sites/blooming-route [none]
+[debug] [2026-09-29T13:39:03.088Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/blooming-route/sites/blooming-route 200
+[debug] [2026-09-29T13:39:03.088Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/blooming-route/sites/blooming-route {"name":"projects/blooming-route/sites/blooming-route","defaultUrl":"https://blooming-route.web.app","type":"DEFAULT_SITE"}
+[debug] [2026-09-29T13:39:03.088Z] Checked if tokens are valid: true, expires at: 1790692740575
+[debug] [2026-09-29T13:39:03.088Z] Checked if tokens are valid: true, expires at: 1790692740575
+[debug] [2026-09-29T13:39:03.088Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/blooming-route/versions [none]
+[debug] [2026-09-29T13:39:03.088Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/blooming-route/versions {"status":"CREATED","labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2026-09-29T13:39:04.209Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/blooming-route/versions 200
+[debug] [2026-09-29T13:39:04.209Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/blooming-route/versions {"name":"projects/916983121837/sites/blooming-route/versions/d0bb2bcd972d6f35","status":"CREATED","config":{},"labels":{"deployment-tool":"cli-firebase"}}
+[info] i  hosting[blooming-route]: beginning deploy... 
+[info] i  hosting[blooming-route]: found 27 files in build 
+[debug] [2026-09-29T13:39:04.219Z] [hosting] uploading with 200 concurrency
+[debug] [2026-09-29T13:39:04.691Z] Checked if tokens are valid: true, expires at: 1790692740575
+[debug] [2026-09-29T13:39:04.692Z] Checked if tokens are valid: true, expires at: 1790692740575
+[debug] [2026-09-29T13:39:04.692Z] [hosting] hash cache [YnVpbGQ] stored for 27 files
+[debug] [2026-09-29T13:39:04.693Z] [hosting][hash queue][FINAL] {"max":470,"min":2,"avg":41.7037037037037,"active":0,"complete":27,"success":27,"errored":0,"retried":0,"total":27,"elapsed":474}
+[debug] [2026-09-29T13:39:04.693Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/916983121837/sites/blooming-route/versions/d0bb2bcd972d6f35:populateFiles [none]
+[debug] [2026-09-29T13:39:04.693Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/916983121837/sites/blooming-route/versions/d0bb2bcd972d6f35:populateFiles {"files":{"/robots.txt":"bfe106a3fb878dc83461c86818bf74fc1bdc7f28538ba613cd3e775516ce8b49","/manifest.json":"ee04fb47e525c67d8424ffe9b4d8a8a24e434504478afca4e0ca602146836d4c","/logo512.png":"212b102aa09e51b3b3e06647e81f7801a61333e171f6582e8124379aabccb41d","/logo192.png":"79e2b749561016bc8af300ea19f48347ceed3cb1a54f48ae456172eca45e08f0","/icon.svg":"8238016bb0cdaee1e266f9364abaefd4b99169cc1132e247fe47a843d32a1ece","/favicon.ico":"27edce7be5922cf0bef7d4136f69b5bfbdd5bf8c13c7b026f71187d41a00aa7d","/index.html":"b5a3ce1dc2f594b6bc2c1a9daaa1434f46526f1e0145902ee5bfd53ea8ea2212","/asset-manifest.json":"34a166d07c69aa310a0cc1b23b50007448395335cad4110dba1efe1a011282f4","/static/media/insta.23e80c22fa0b406a0da36f60a0e25653.svg":"14c8ff06eb8ca81f1fa17be5d14b1f138741093d1c4e74508a8232cd709e492b","/static/js/main.57f95af3.js.LICENSE.txt":"700b2a57c29cec3af59bf33ca7272fb8a0721bc8035f3ba9d76298c183081131","/static/js/453.109c0761.chunk.js":"2222fc8cd621e75312a464ccccb53a2bebbfa5a53f0b5a36737a89da597a2ace","/static/js/453.109c0761.chunk.js.map":"0d2ea59f5233538067a0d8766e46a37b63e7006712c500bbae157899672fa730","/static/css/main.a0576c0a.css":"4bcb3570f45e6f079f4f2be1f0324992c7437e9f69b5dcedfc96aad1539370ee","/static/css/main.a0576c0a.css.map":"ca18c77fa96dcc29b09e808f4a855455303c1b787dfeb387018041772a40ee95","/static/media/logo.eb8405db879f494f7a2a275fc7257a66.svg":"d587ef71a601d9390c2ae8299fb2bdf3d21a5642a379eed2ca3e0ca190f8f7d1","/static/media/flower_3.32fbe4a89c4a1e547e474cf3110fa541.svg":"09875ce4100b4f46b99f52cc765151833ecab350aa79d7cf791220a477c86875","/static/media/flower_5.312cf333f30f169451150e632c9c9add.svg":"5565f82aaac81ad515d04b23734e0db029bbb06ed05a45000735e46a191a5f17","/static/media/flower_2.6745d25a9522a97ffdc9a325905ad714.svg":"cb169eb0e747d9f0514d3b5d4e979eebd93484fd77c7b36e05351e5e68db09cb","/static/media/flower_4.2c88ec79aad1115bd70d3448287506a0.svg":"0d5baa4e1ea2960f90e42b2a041c83319b14cec4ddb9ee39b91836c3c9697d5c","/static/media/flower_1.053cc3d942f4cdf8247b048d4e13df45.svg":"f05f59379c1950d0e997149a12fbf205f29096c554ab7f92fe52de1274500253","/static/js/main.57f95af3.js":"17cafdfe0e7670be0a5f7b7c8ee3d4eaf89051e7a900016fcf513033c47d8702","/static/media/clear.cf2fa84b36243c8250541ad695059a04.svg":"b064752ae61ea27f5f7549502b9181a20b8f3e0a704069a29f0e649ae4bdf1a3","/static/media/level_4.62ed3392e1ce90c904c82fb6d68955f8.svg":"eafe37a6e032375228558ef8fa324d5a0230c30dc16cd93c446eb307ad8760af","/static/media/level_2.a0593645b175f86ec07125d416a3c715.svg":"844cb13eb2ea9c4f413524b5c677ef5ef32e1ac6f0b3aedfe3e9a69b75ab79bc","/static/media/level_3.edd3531d81ffca9709498bf76597af76.svg":"b32d86c7f5663c026a13742c41428f37f69e478269207a24e11457afbb5d9ecd","/static/media/level_1.d4ab22c5c50914bf88ce1beaefee1064.svg":"bd83e63dc696702f2df87aecf0b2d9ceeda3e3c7b71c587283c908e5f1542cf2","/static/js/main.57f95af3.js.map":"02b1ac01e45b6af62928ac4bc625ad0a62c3d79bcc1b7c96e97ec2c5099c15be"}}
+[debug] [2026-09-29T13:39:05.352Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/916983121837/sites/blooming-route/versions/d0bb2bcd972d6f35:populateFiles 200
+[debug] [2026-09-29T13:39:05.353Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/916983121837/sites/blooming-route/versions/d0bb2bcd972d6f35:populateFiles {"uploadRequiredHashes":["34a166d07c69aa310a0cc1b23b50007448395335cad4110dba1efe1a011282f4","02b1ac01e45b6af62928ac4bc625ad0a62c3d79bcc1b7c96e97ec2c5099c15be","14c8ff06eb8ca81f1fa17be5d14b1f138741093d1c4e74508a8232cd709e492b","ca18c77fa96dcc29b09e808f4a855455303c1b787dfeb387018041772a40ee95","17cafdfe0e7670be0a5f7b7c8ee3d4eaf89051e7a900016fcf513033c47d8702","b5a3ce1dc2f594b6bc2c1a9daaa1434f46526f1e0145902ee5bfd53ea8ea2212","4bcb3570f45e6f079f4f2be1f0324992c7437e9f69b5dcedfc96aad1539370ee"],"uploadUrl":"https://upload-firebasehosting.googleapis.com/upload/sites/blooming-route/versions/d0bb2bcd972d6f35/files"}
+[debug] [2026-09-29T13:39:05.353Z] Checked if tokens are valid: true, expires at: 1790692740575
+[debug] [2026-09-29T13:39:05.353Z] Checked if tokens are valid: true, expires at: 1790692740575
+[debug] [2026-09-29T13:39:05.353Z] Checked if tokens are valid: true, expires at: 1790692740575
+[debug] [2026-09-29T13:39:05.353Z] Checked if tokens are valid: true, expires at: 1790692740575
+[debug] [2026-09-29T13:39:05.353Z] Checked if tokens are valid: true, expires at: 1790692740575
+[debug] [2026-09-29T13:39:05.353Z] Checked if tokens are valid: true, expires at: 1790692740575
+[debug] [2026-09-29T13:39:05.353Z] Checked if tokens are valid: true, expires at: 1790692740575
+[debug] [2026-09-29T13:39:05.353Z] Checked if tokens are valid: true, expires at: 1790692740575
+[debug] [2026-09-29T13:39:05.353Z] Checked if tokens are valid: true, expires at: 1790692740575
+[debug] [2026-09-29T13:39:05.353Z] Checked if tokens are valid: true, expires at: 1790692740575
+[debug] [2026-09-29T13:39:05.354Z] Checked if tokens are valid: true, expires at: 1790692740575
+[debug] [2026-09-29T13:39:05.354Z] Checked if tokens are valid: true, expires at: 1790692740575
+[debug] [2026-09-29T13:39:05.354Z] Checked if tokens are valid: true, expires at: 1790692740575
+[debug] [2026-09-29T13:39:05.354Z] Checked if tokens are valid: true, expires at: 1790692740575
+[debug] [2026-09-29T13:39:05.354Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/blooming-route/versions/d0bb2bcd972d6f35/files/34a166d07c69aa310a0cc1b23b50007448395335cad4110dba1efe1a011282f4 [none]
+[debug] [2026-09-29T13:39:05.354Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/blooming-route/versions/d0bb2bcd972d6f35/files/34a166d07c69aa310a0cc1b23b50007448395335cad4110dba1efe1a011282f4 [stream]
+[debug] [2026-09-29T13:39:05.354Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/blooming-route/versions/d0bb2bcd972d6f35/files/02b1ac01e45b6af62928ac4bc625ad0a62c3d79bcc1b7c96e97ec2c5099c15be [none]
+[debug] [2026-09-29T13:39:05.354Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/blooming-route/versions/d0bb2bcd972d6f35/files/02b1ac01e45b6af62928ac4bc625ad0a62c3d79bcc1b7c96e97ec2c5099c15be [stream]
+[debug] [2026-09-29T13:39:05.355Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/blooming-route/versions/d0bb2bcd972d6f35/files/14c8ff06eb8ca81f1fa17be5d14b1f138741093d1c4e74508a8232cd709e492b [none]
+[debug] [2026-09-29T13:39:05.355Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/blooming-route/versions/d0bb2bcd972d6f35/files/14c8ff06eb8ca81f1fa17be5d14b1f138741093d1c4e74508a8232cd709e492b [stream]
+[debug] [2026-09-29T13:39:05.355Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/blooming-route/versions/d0bb2bcd972d6f35/files/ca18c77fa96dcc29b09e808f4a855455303c1b787dfeb387018041772a40ee95 [none]
+[debug] [2026-09-29T13:39:05.355Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/blooming-route/versions/d0bb2bcd972d6f35/files/ca18c77fa96dcc29b09e808f4a855455303c1b787dfeb387018041772a40ee95 [stream]
+[debug] [2026-09-29T13:39:05.355Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/blooming-route/versions/d0bb2bcd972d6f35/files/17cafdfe0e7670be0a5f7b7c8ee3d4eaf89051e7a900016fcf513033c47d8702 [none]
+[debug] [2026-09-29T13:39:05.355Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/blooming-route/versions/d0bb2bcd972d6f35/files/17cafdfe0e7670be0a5f7b7c8ee3d4eaf89051e7a900016fcf513033c47d8702 [stream]
+[debug] [2026-09-29T13:39:05.356Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/blooming-route/versions/d0bb2bcd972d6f35/files/b5a3ce1dc2f594b6bc2c1a9daaa1434f46526f1e0145902ee5bfd53ea8ea2212 [none]
+[debug] [2026-09-29T13:39:05.356Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/blooming-route/versions/d0bb2bcd972d6f35/files/b5a3ce1dc2f594b6bc2c1a9daaa1434f46526f1e0145902ee5bfd53ea8ea2212 [stream]
+[debug] [2026-09-29T13:39:05.356Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/blooming-route/versions/d0bb2bcd972d6f35/files/4bcb3570f45e6f079f4f2be1f0324992c7437e9f69b5dcedfc96aad1539370ee [none]
+[debug] [2026-09-29T13:39:05.356Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/blooming-route/versions/d0bb2bcd972d6f35/files/4bcb3570f45e6f079f4f2be1f0324992c7437e9f69b5dcedfc96aad1539370ee [stream]
+[debug] [2026-09-29T13:39:05.358Z] [hosting][populate queue][FINAL] {"max":663,"min":663,"avg":663,"active":0,"complete":1,"success":1,"errored":0,"retried":0,"total":1,"elapsed":667}
+[debug] [2026-09-29T13:39:05.358Z] [hosting] uploads queued: 7
+[info] i  hosting: uploading new files [0/7] (0%) 
+[debug] [2026-09-29T13:39:06.619Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/blooming-route/versions/d0bb2bcd972d6f35/files/34a166d07c69aa310a0cc1b23b50007448395335cad4110dba1efe1a011282f4 200
+[debug] [2026-09-29T13:39:06.619Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/blooming-route/versions/d0bb2bcd972d6f35/files/34a166d07c69aa310a0cc1b23b50007448395335cad4110dba1efe1a011282f4 [stream]
+[debug] [2026-09-29T13:39:06.701Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/blooming-route/versions/d0bb2bcd972d6f35/files/4bcb3570f45e6f079f4f2be1f0324992c7437e9f69b5dcedfc96aad1539370ee 200
+[debug] [2026-09-29T13:39:06.701Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/blooming-route/versions/d0bb2bcd972d6f35/files/4bcb3570f45e6f079f4f2be1f0324992c7437e9f69b5dcedfc96aad1539370ee [stream]
+[debug] [2026-09-29T13:39:06.711Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/blooming-route/versions/d0bb2bcd972d6f35/files/14c8ff06eb8ca81f1fa17be5d14b1f138741093d1c4e74508a8232cd709e492b 200
+[debug] [2026-09-29T13:39:06.711Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/blooming-route/versions/d0bb2bcd972d6f35/files/14c8ff06eb8ca81f1fa17be5d14b1f138741093d1c4e74508a8232cd709e492b [stream]
+[debug] [2026-09-29T13:39:06.742Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/blooming-route/versions/d0bb2bcd972d6f35/files/b5a3ce1dc2f594b6bc2c1a9daaa1434f46526f1e0145902ee5bfd53ea8ea2212 200
+[debug] [2026-09-29T13:39:06.742Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/blooming-route/versions/d0bb2bcd972d6f35/files/b5a3ce1dc2f594b6bc2c1a9daaa1434f46526f1e0145902ee5bfd53ea8ea2212 [stream]
+[debug] [2026-09-29T13:39:06.778Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/blooming-route/versions/d0bb2bcd972d6f35/files/17cafdfe0e7670be0a5f7b7c8ee3d4eaf89051e7a900016fcf513033c47d8702 200
+[debug] [2026-09-29T13:39:06.778Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/blooming-route/versions/d0bb2bcd972d6f35/files/17cafdfe0e7670be0a5f7b7c8ee3d4eaf89051e7a900016fcf513033c47d8702 [stream]
+[debug] [2026-09-29T13:39:06.871Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/blooming-route/versions/d0bb2bcd972d6f35/files/ca18c77fa96dcc29b09e808f4a855455303c1b787dfeb387018041772a40ee95 200
+[debug] [2026-09-29T13:39:06.871Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/blooming-route/versions/d0bb2bcd972d6f35/files/ca18c77fa96dcc29b09e808f4a855455303c1b787dfeb387018041772a40ee95 [stream]
+[debug] [2026-09-29T13:39:07.045Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/blooming-route/versions/d0bb2bcd972d6f35/files/02b1ac01e45b6af62928ac4bc625ad0a62c3d79bcc1b7c96e97ec2c5099c15be 200
+[debug] [2026-09-29T13:39:07.045Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/blooming-route/versions/d0bb2bcd972d6f35/files/02b1ac01e45b6af62928ac4bc625ad0a62c3d79bcc1b7c96e97ec2c5099c15be [stream]
+[debug] [2026-09-29T13:39:07.046Z] [hosting][upload queue][FINAL] {"max":1692,"min":1266,"avg":1427.7142857142858,"active":0,"complete":7,"success":7,"errored":0,"retried":0,"total":7,"elapsed":1693}
+[info] i  hosting: upload complete 
+[info] +  hosting[blooming-route]: file upload complete 
+[debug] [2026-09-29T13:39:07.046Z] [hosting] deploy completed after 2835ms
+[debug] [2026-09-29T13:39:07.047Z] [
+  {
+    "config": {
+      "public": "build",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ],
+      "site": "blooming-route"
+    },
+    "version": "projects/916983121837/sites/blooming-route/versions/d0bb2bcd972d6f35"
+  }
+]
+[info] i  hosting[blooming-route]: finalizing version... 
+[debug] [2026-09-29T13:39:07.049Z] Checked if tokens are valid: true, expires at: 1790692740575
+[debug] [2026-09-29T13:39:07.049Z] Checked if tokens are valid: true, expires at: 1790692740575
+[debug] [2026-09-29T13:39:07.049Z] >>> [apiv2][query] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/blooming-route/versions/d0bb2bcd972d6f35 updateMask=status%2Cconfig
+[debug] [2026-09-29T13:39:07.049Z] >>> [apiv2][body] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/blooming-route/versions/d0bb2bcd972d6f35 {"status":"FINALIZED","config":{"rewrites":[{"glob":"**","path":"/index.html"}]}}
+[debug] [2026-09-29T13:39:07.747Z] <<< [apiv2][status] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/blooming-route/versions/d0bb2bcd972d6f35 200
+[debug] [2026-09-29T13:39:07.747Z] <<< [apiv2][body] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/blooming-route/versions/d0bb2bcd972d6f35 {"name":"projects/916983121837/sites/blooming-route/versions/d0bb2bcd972d6f35","status":"FINALIZED","config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"},"createTime":"2026-09-29T13:39:02.546520Z","createUser":{"email":"gihoon0907@gmail.com"},"finalizeTime":"2026-09-29T13:39:06.623026Z","finalizeUser":{"email":"gihoon0907@gmail.com"}}
+[debug] [2026-09-29T13:39:07.747Z] [hosting] finalized version for blooming-route:[object Object]
+[info] +  hosting[blooming-route]: version finalized 
+[info] i  hosting[blooming-route]: releasing new version... 
+[debug] [2026-09-29T13:39:07.747Z] Checked if tokens are valid: true, expires at: 1790692740575
+[debug] [2026-09-29T13:39:07.747Z] Checked if tokens are valid: true, expires at: 1790692740575
+[debug] [2026-09-29T13:39:07.747Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/blooming-route/channels/live/releases versionName=projects%2F916983121837%2Fsites%2Fblooming-route%2Fversions%2Fd0bb2bcd972d6f35
+[debug] [2026-09-29T13:39:07.747Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/blooming-route/channels/live/releases {}
+[debug] [2026-09-29T13:39:08.591Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/blooming-route/channels/live/releases 200
+[debug] [2026-09-29T13:57:29.523Z] ----------------------------------------------------------------------
+[debug] [2026-09-29T13:57:29.525Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\hoon\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy --only hosting
+[debug] [2026-09-29T13:57:29.525Z] CLI Version:   15.31.0
+[debug] [2026-09-29T13:57:29.525Z] Platform:      win32
+[debug] [2026-09-29T13:57:29.525Z] Node Version:  v24.14.0
+[debug] [2026-09-29T13:57:29.525Z] Detected Agent: codex_cli
+[debug] [2026-09-29T13:57:29.525Z] Time:          Tue Sep 29 2026 22:57:29 GMT+0900 (한국 표준시)
+[debug] [2026-09-29T13:57:29.525Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2026-09-29T13:57:30.445Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-09-29T13:57:30.445Z] > authorizing via signed-in user (gihoon0907@gmail.com)
+[debug] [2026-09-29T13:57:30.445Z] [iam] checking project blooming-route for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2026-09-29T13:57:30.453Z] Checked if tokens are valid: true, expires at: 1790692740575
+[debug] [2026-09-29T13:57:30.453Z] Checked if tokens are valid: true, expires at: 1790692740575
+[debug] [2026-09-29T13:57:30.454Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/blooming-route:testIamPermissions [none]
+[debug] [2026-09-29T13:57:30.454Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/blooming-route:testIamPermissions  x-goog-user-project=blooming-route
+[debug] [2026-09-29T13:57:30.454Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/blooming-route:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2026-09-29T13:57:30.709Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/blooming-route:testIamPermissions 200
+[debug] [2026-09-29T13:57:30.709Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/blooming-route:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2026-09-29T13:57:30.710Z] Checked if tokens are valid: true, expires at: 1790692740575
+[debug] [2026-09-29T13:57:30.710Z] Checked if tokens are valid: true, expires at: 1790692740575
+[debug] [2026-09-29T13:57:30.710Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/blooming-route [none]
+[debug] [2026-09-29T13:57:31.138Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/blooming-route 200
+[debug] [2026-09-29T13:57:31.138Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/blooming-route {"projectId":"blooming-route","projectNumber":"916983121837","displayName":"Blooming Route","name":"projects/blooming-route","resources":{"hostingSite":"blooming-route"},"state":"ACTIVE","labels":{"firebase":"enabled"},"etag":"1_ecf2683b-40ed-45f0-b785-9f2a460c1c68"}
+[info] 
+[info] === Deploying to 'blooming-route'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2026-09-29T13:57:31.140Z] Checked if tokens are valid: true, expires at: 1790692740575
+[debug] [2026-09-29T13:57:31.140Z] Checked if tokens are valid: true, expires at: 1790692740575
+[debug] [2026-09-29T13:57:31.140Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/blooming-route/sites/blooming-route [none]
+[debug] [2026-09-29T13:57:32.094Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/blooming-route/sites/blooming-route 200
+[debug] [2026-09-29T13:57:32.094Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/blooming-route/sites/blooming-route {"name":"projects/blooming-route/sites/blooming-route","defaultUrl":"https://blooming-route.web.app","type":"DEFAULT_SITE"}
+[debug] [2026-09-29T13:57:32.095Z] Checked if tokens are valid: true, expires at: 1790692740575
+[debug] [2026-09-29T13:57:32.096Z] Checked if tokens are valid: true, expires at: 1790692740575
+[debug] [2026-09-29T13:57:32.096Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/blooming-route/versions [none]
+[debug] [2026-09-29T13:57:32.096Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/blooming-route/versions {"status":"CREATED","labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2026-09-29T13:57:33.209Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/blooming-route/versions 200
+[debug] [2026-09-29T13:57:33.209Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/blooming-route/versions {"name":"projects/916983121837/sites/blooming-route/versions/587ca0373de9be57","status":"CREATED","config":{},"labels":{"deployment-tool":"cli-firebase"}}
+[info] i  hosting[blooming-route]: beginning deploy... 
+[info] i  hosting[blooming-route]: found 27 files in build 
+[debug] [2026-09-29T13:57:33.217Z] [hosting] uploading with 200 concurrency
+[debug] [2026-09-29T13:57:33.677Z] Checked if tokens are valid: true, expires at: 1790692740575
+[debug] [2026-09-29T13:57:33.677Z] Checked if tokens are valid: true, expires at: 1790692740575
+[debug] [2026-09-29T13:57:33.679Z] [hosting] hash cache [YnVpbGQ] stored for 27 files
+[debug] [2026-09-29T13:57:33.679Z] [hosting][hash queue][FINAL] {"max":458,"min":1,"avg":39.77777777777778,"active":0,"complete":27,"success":27,"errored":0,"retried":0,"total":27,"elapsed":461}
+[debug] [2026-09-29T13:57:33.679Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/916983121837/sites/blooming-route/versions/587ca0373de9be57:populateFiles [none]
+[debug] [2026-09-29T13:57:33.679Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/916983121837/sites/blooming-route/versions/587ca0373de9be57:populateFiles {"files":{"/robots.txt":"bfe106a3fb878dc83461c86818bf74fc1bdc7f28538ba613cd3e775516ce8b49","/manifest.json":"ee04fb47e525c67d8424ffe9b4d8a8a24e434504478afca4e0ca602146836d4c","/logo512.png":"212b102aa09e51b3b3e06647e81f7801a61333e171f6582e8124379aabccb41d","/logo192.png":"79e2b749561016bc8af300ea19f48347ceed3cb1a54f48ae456172eca45e08f0","/icon.svg":"8238016bb0cdaee1e266f9364abaefd4b99169cc1132e247fe47a843d32a1ece","/favicon.ico":"27edce7be5922cf0bef7d4136f69b5bfbdd5bf8c13c7b026f71187d41a00aa7d","/index.html":"3e47545e0dcb16e922d58ee01c5a6b841d879dbb425d98bac0e61ed3b6629961","/asset-manifest.json":"9a9fb8cab6cb1aa358f9cd00685cccf6fe16f0d7954493d4bd28e16a1dabe753","/static/media/insta.23e80c22fa0b406a0da36f60a0e25653.svg":"14c8ff06eb8ca81f1fa17be5d14b1f138741093d1c4e74508a8232cd709e492b","/static/js/main.57f95af3.js.LICENSE.txt":"700b2a57c29cec3af59bf33ca7272fb8a0721bc8035f3ba9d76298c183081131","/static/js/453.109c0761.chunk.js":"2222fc8cd621e75312a464ccccb53a2bebbfa5a53f0b5a36737a89da597a2ace","/static/css/main.2e3633ea.css":"b69429382c981d07cf9c4a468f3c4963695c8fdfad9eec35fda97b0c131e7afe","/static/js/453.109c0761.chunk.js.map":"0d2ea59f5233538067a0d8766e46a37b63e7006712c500bbae157899672fa730","/static/css/main.2e3633ea.css.map":"e57d348ecca93e783d2e131d77a765cbc831e4c95b9a39286f19545a508c3339","/static/media/logo.eb8405db879f494f7a2a275fc7257a66.svg":"d587ef71a601d9390c2ae8299fb2bdf3d21a5642a379eed2ca3e0ca190f8f7d1","/static/media/flower_2.6745d25a9522a97ffdc9a325905ad714.svg":"cb169eb0e747d9f0514d3b5d4e979eebd93484fd77c7b36e05351e5e68db09cb","/static/media/flower_3.32fbe4a89c4a1e547e474cf3110fa541.svg":"09875ce4100b4f46b99f52cc765151833ecab350aa79d7cf791220a477c86875","/static/media/flower_5.312cf333f30f169451150e632c9c9add.svg":"5565f82aaac81ad515d04b23734e0db029bbb06ed05a45000735e46a191a5f17","/static/media/flower_4.2c88ec79aad1115bd70d3448287506a0.svg":"0d5baa4e1ea2960f90e42b2a041c83319b14cec4ddb9ee39b91836c3c9697d5c","/static/media/flower_1.053cc3d942f4cdf8247b048d4e13df45.svg":"f05f59379c1950d0e997149a12fbf205f29096c554ab7f92fe52de1274500253","/static/js/main.57f95af3.js":"17cafdfe0e7670be0a5f7b7c8ee3d4eaf89051e7a900016fcf513033c47d8702","/static/media/clear.cf2fa84b36243c8250541ad695059a04.svg":"b064752ae61ea27f5f7549502b9181a20b8f3e0a704069a29f0e649ae4bdf1a3","/static/media/level_4.62ed3392e1ce90c904c82fb6d68955f8.svg":"eafe37a6e032375228558ef8fa324d5a0230c30dc16cd93c446eb307ad8760af","/static/media/level_2.a0593645b175f86ec07125d416a3c715.svg":"844cb13eb2ea9c4f413524b5c677ef5ef32e1ac6f0b3aedfe3e9a69b75ab79bc","/static/media/level_1.d4ab22c5c50914bf88ce1beaefee1064.svg":"bd83e63dc696702f2df87aecf0b2d9ceeda3e3c7b71c587283c908e5f1542cf2","/static/media/level_3.edd3531d81ffca9709498bf76597af76.svg":"b32d86c7f5663c026a13742c41428f37f69e478269207a24e11457afbb5d9ecd","/static/js/main.57f95af3.js.map":"814f4e5d2117e48795d8e5d64b80658d7f614a9c522f3ada614339b3516ca515"}}
+[debug] [2026-09-29T13:57:34.324Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/916983121837/sites/blooming-route/versions/587ca0373de9be57:populateFiles 200
+[debug] [2026-09-29T13:57:34.324Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/916983121837/sites/blooming-route/versions/587ca0373de9be57:populateFiles {"uploadRequiredHashes":["3e47545e0dcb16e922d58ee01c5a6b841d879dbb425d98bac0e61ed3b6629961","9a9fb8cab6cb1aa358f9cd00685cccf6fe16f0d7954493d4bd28e16a1dabe753","814f4e5d2117e48795d8e5d64b80658d7f614a9c522f3ada614339b3516ca515","e57d348ecca93e783d2e131d77a765cbc831e4c95b9a39286f19545a508c3339","b69429382c981d07cf9c4a468f3c4963695c8fdfad9eec35fda97b0c131e7afe"],"uploadUrl":"https://upload-firebasehosting.googleapis.com/upload/sites/blooming-route/versions/587ca0373de9be57/files"}
+[debug] [2026-09-29T13:57:34.325Z] Checked if tokens are valid: true, expires at: 1790692740575
+[debug] [2026-09-29T13:57:34.325Z] Checked if tokens are valid: true, expires at: 1790692740575
+[debug] [2026-09-29T13:57:34.325Z] Checked if tokens are valid: true, expires at: 1790692740575
+[debug] [2026-09-29T13:57:34.325Z] Checked if tokens are valid: true, expires at: 1790692740575
+[debug] [2026-09-29T13:57:34.325Z] Checked if tokens are valid: true, expires at: 1790692740575
+[debug] [2026-09-29T13:57:34.325Z] Checked if tokens are valid: true, expires at: 1790692740575
+[debug] [2026-09-29T13:57:34.325Z] Checked if tokens are valid: true, expires at: 1790692740575
+[debug] [2026-09-29T13:57:34.325Z] Checked if tokens are valid: true, expires at: 1790692740575
+[debug] [2026-09-29T13:57:34.325Z] Checked if tokens are valid: true, expires at: 1790692740575
+[debug] [2026-09-29T13:57:34.325Z] Checked if tokens are valid: true, expires at: 1790692740575
+[debug] [2026-09-29T13:57:34.325Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/blooming-route/versions/587ca0373de9be57/files/3e47545e0dcb16e922d58ee01c5a6b841d879dbb425d98bac0e61ed3b6629961 [none]
+[debug] [2026-09-29T13:57:34.325Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/blooming-route/versions/587ca0373de9be57/files/3e47545e0dcb16e922d58ee01c5a6b841d879dbb425d98bac0e61ed3b6629961 [stream]
+[debug] [2026-09-29T13:57:34.326Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/blooming-route/versions/587ca0373de9be57/files/9a9fb8cab6cb1aa358f9cd00685cccf6fe16f0d7954493d4bd28e16a1dabe753 [none]
+[debug] [2026-09-29T13:57:34.326Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/blooming-route/versions/587ca0373de9be57/files/9a9fb8cab6cb1aa358f9cd00685cccf6fe16f0d7954493d4bd28e16a1dabe753 [stream]
+[debug] [2026-09-29T13:57:34.326Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/blooming-route/versions/587ca0373de9be57/files/814f4e5d2117e48795d8e5d64b80658d7f614a9c522f3ada614339b3516ca515 [none]
+[debug] [2026-09-29T13:57:34.326Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/blooming-route/versions/587ca0373de9be57/files/814f4e5d2117e48795d8e5d64b80658d7f614a9c522f3ada614339b3516ca515 [stream]
+[debug] [2026-09-29T13:57:34.327Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/blooming-route/versions/587ca0373de9be57/files/e57d348ecca93e783d2e131d77a765cbc831e4c95b9a39286f19545a508c3339 [none]
+[debug] [2026-09-29T13:57:34.327Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/blooming-route/versions/587ca0373de9be57/files/e57d348ecca93e783d2e131d77a765cbc831e4c95b9a39286f19545a508c3339 [stream]
+[debug] [2026-09-29T13:57:34.327Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/blooming-route/versions/587ca0373de9be57/files/b69429382c981d07cf9c4a468f3c4963695c8fdfad9eec35fda97b0c131e7afe [none]
+[debug] [2026-09-29T13:57:34.327Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/blooming-route/versions/587ca0373de9be57/files/b69429382c981d07cf9c4a468f3c4963695c8fdfad9eec35fda97b0c131e7afe [stream]
+[debug] [2026-09-29T13:57:34.329Z] [hosting][populate queue][FINAL] {"max":648,"min":648,"avg":648,"active":0,"complete":1,"success":1,"errored":0,"retried":0,"total":1,"elapsed":652}
+[debug] [2026-09-29T13:57:34.329Z] [hosting] uploads queued: 5
+[info] i  hosting: uploading new files [0/5] (0%) 
+[debug] [2026-09-29T13:57:35.668Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/blooming-route/versions/587ca0373de9be57/files/9a9fb8cab6cb1aa358f9cd00685cccf6fe16f0d7954493d4bd28e16a1dabe753 200
+[debug] [2026-09-29T13:57:35.668Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/blooming-route/versions/587ca0373de9be57/files/9a9fb8cab6cb1aa358f9cd00685cccf6fe16f0d7954493d4bd28e16a1dabe753 [stream]
+[debug] [2026-09-29T13:57:35.724Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/blooming-route/versions/587ca0373de9be57/files/b69429382c981d07cf9c4a468f3c4963695c8fdfad9eec35fda97b0c131e7afe 200
+[debug] [2026-09-29T13:57:35.724Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/blooming-route/versions/587ca0373de9be57/files/b69429382c981d07cf9c4a468f3c4963695c8fdfad9eec35fda97b0c131e7afe [stream]
+[debug] [2026-09-29T13:57:35.810Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/blooming-route/versions/587ca0373de9be57/files/e57d348ecca93e783d2e131d77a765cbc831e4c95b9a39286f19545a508c3339 200
+[debug] [2026-09-29T13:57:35.811Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/blooming-route/versions/587ca0373de9be57/files/e57d348ecca93e783d2e131d77a765cbc831e4c95b9a39286f19545a508c3339 [stream]
+[debug] [2026-09-29T13:57:35.839Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/blooming-route/versions/587ca0373de9be57/files/3e47545e0dcb16e922d58ee01c5a6b841d879dbb425d98bac0e61ed3b6629961 200
+[debug] [2026-09-29T13:57:35.839Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/blooming-route/versions/587ca0373de9be57/files/3e47545e0dcb16e922d58ee01c5a6b841d879dbb425d98bac0e61ed3b6629961 [stream]
+[debug] [2026-09-29T13:57:36.190Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/blooming-route/versions/587ca0373de9be57/files/814f4e5d2117e48795d8e5d64b80658d7f614a9c522f3ada614339b3516ca515 200
+[debug] [2026-09-29T13:57:36.190Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/blooming-route/versions/587ca0373de9be57/files/814f4e5d2117e48795d8e5d64b80658d7f614a9c522f3ada614339b3516ca515 [stream]
+[debug] [2026-09-29T13:57:36.191Z] [hosting][upload queue][FINAL] {"max":1865,"min":1343,"avg":1521.6,"active":0,"complete":5,"success":5,"errored":0,"retried":0,"total":5,"elapsed":1867}
+[info] i  hosting: upload complete 
+[info] +  hosting[blooming-route]: file upload complete 
+[debug] [2026-09-29T13:57:36.191Z] [hosting] deploy completed after 2981ms
+[debug] [2026-09-29T13:57:36.191Z] [
+  {
+    "config": {
+      "public": "build",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ],
+      "site": "blooming-route"
+    },
+    "version": "projects/916983121837/sites/blooming-route/versions/587ca0373de9be57"
+  }
+]
+[info] i  hosting[blooming-route]: finalizing version... 
+[debug] [2026-09-29T13:57:36.193Z] Checked if tokens are valid: true, expires at: 1790692740575
+[debug] [2026-09-29T13:57:36.193Z] Checked if tokens are valid: true, expires at: 1790692740575
+[debug] [2026-09-29T13:57:36.193Z] >>> [apiv2][query] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/blooming-route/versions/587ca0373de9be57 updateMask=status%2Cconfig
+[debug] [2026-09-29T13:57:36.193Z] >>> [apiv2][body] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/blooming-route/versions/587ca0373de9be57 {"status":"FINALIZED","config":{"rewrites":[{"glob":"**","path":"/index.html"}]}}
+[debug] [2026-09-29T13:57:36.902Z] <<< [apiv2][status] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/blooming-route/versions/587ca0373de9be57 200
+[debug] [2026-09-29T13:57:36.902Z] <<< [apiv2][body] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/blooming-route/versions/587ca0373de9be57 {"name":"projects/916983121837/sites/blooming-route/versions/587ca0373de9be57","status":"FINALIZED","config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"},"createTime":"2026-09-29T13:57:31.527829Z","createUser":{"email":"gihoon0907@gmail.com"},"finalizeTime":"2026-09-29T13:57:35.791137Z","finalizeUser":{"email":"gihoon0907@gmail.com"}}
+[debug] [2026-09-29T13:57:36.902Z] [hosting] finalized version for blooming-route:[object Object]
+[info] +  hosting[blooming-route]: version finalized 
+[info] i  hosting[blooming-route]: releasing new version... 
+[debug] [2026-09-29T13:57:36.902Z] Checked if tokens are valid: true, expires at: 1790692740575
+[debug] [2026-09-29T13:57:36.902Z] Checked if tokens are valid: true, expires at: 1790692740575
+[debug] [2026-09-29T13:57:36.902Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/blooming-route/channels/live/releases versionName=projects%2F916983121837%2Fsites%2Fblooming-route%2Fversions%2F587ca0373de9be57
+[debug] [2026-09-29T13:57:36.902Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/blooming-route/channels/live/releases {}
+[debug] [2026-09-29T13:57:37.690Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/blooming-route/channels/live/releases 200

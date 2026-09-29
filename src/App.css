@@ -9,6 +9,11 @@
   --serif: "Gowun Batang", "Batang", "Noto Serif KR", serif;
 }
 
+img {
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
 .app-shell {
   display: flex;
   flex-direction: column;
@@ -68,6 +73,8 @@
     700 11px/1 Arial,
     sans-serif;
   cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
 }
 .language-toggle:focus-visible {
   outline: 2px solid #e94565;
@@ -239,6 +246,7 @@ h1 {
     background 0.18s ease,
     transform 0.18s ease;
   -webkit-tap-highlight-color: transparent;
+  font-weight: bold;
 }
 .answer:active {
   background: #ffc4c9;
@@ -322,7 +330,7 @@ h1 {
   font-size: 20px;
 }
 .result-letter {
-  margin-top: 1px;
+  margin-top: 50px;
   color: #ed2e57;
   font:
     700 34px/1.2 Arial,
@@ -437,8 +445,37 @@ h1 {
   margin: 0 auto;
   text-align: center;
 }
+.complete-content .text-action.instagram-link {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+  text-align: left;
+}
+.complete-content .text-action.instagram-link span {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
+  font: inherit;
+  line-height: 1em;
+  white-space: nowrap;
+}
+.instagram-icon {
+  display: block;
+  flex: 0 0 22px;
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+  user-select: none;
+  -webkit-user-drag: none;
+  pointer-events: none;
+}
 .complete-links-label {
-  margin: 8px 0 10px;
+  margin: 8px 0 30px;
   color: var(--rose);
   font-size: 14px;
   font-weight: 700;
