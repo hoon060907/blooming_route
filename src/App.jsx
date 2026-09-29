@@ -7,6 +7,10 @@ import flower2 from "./images/flower_2.svg";
 import flower3 from "./images/flower_3.svg";
 import flower4 from "./images/flower_4.svg";
 import flower5 from "./images/flower_5.svg";
+import level1 from "./images/level_1.svg";
+import level2 from "./images/level_2.svg";
+import level3 from "./images/level_3.svg";
+import level4 from "./images/level_4.svg";
 import clearFlower from "./images/clear.svg";
 import "./App.css";
 
@@ -139,8 +143,8 @@ const englishQuiz = [
   {
     title: "The Light of Suwon",
     prompt: "Who built Hwaseong Fortress and founded a new city?",
-    options: ["Sejong", "King Jeongjo", "Gojong", "Sunjong"],
-    flower: "King Jeongjo",
+    options: ["Sejong", "Jeongjo", "Gojong", "Sunjong"],
+    flower: "Jeongjo",
     story: (
       <>
         King Jeongjo dreamed of a new Suwon.
@@ -182,13 +186,13 @@ const englishQuiz = [
     options: [
       "Marigold",
       "Nayeong Workshop",
-      "Jongi Nori",
+      "Paper Nori",
       "Janggeum Workshop",
     ],
-    flower: "Jongi Nori",
+    flower: "Paper Nori",
     story: (
       <>
-        Jongi Nori brings the warmth of hanji paper
+        Paper Nori brings the warmth of hanji paper
         <br />
         to your fingertips.
         <br />
@@ -241,14 +245,25 @@ const englishQuiz = [
 ];
 
 const counterRef = doc(db, "stats", "bloomingRoute");
-const flowerGoal = 100;
+const flowerGoal = 400;
 const resultFlowers = [flower1, flower2, flower3, flower4, flower5];
+const levelFlowers = [level1, level2, level3, level4];
 const flowerRotations = [
   "rotate(-159.088deg)",
   "rotate(128.469deg)",
   "rotate(116.731deg)",
   "rotate(-33.534deg)",
   "rotate(81.781deg)",
+];
+const lightOffsets = [
+  ["-126px", "-34px", "0ms"],
+  ["-88px", "-92px", "90ms"],
+  ["-22px", "-118px", "180ms"],
+  ["54px", "-104px", "270ms"],
+  ["126px", "-50px", "360ms"],
+  ["112px", "32px", "450ms"],
+  ["46px", "68px", "540ms"],
+  ["-78px", "48px", "630ms"],
 ];
 
 function Brand({ subtle = false }) {
@@ -275,6 +290,11 @@ function App() {
   const current = quiz[question];
   const currentCopy = language === "en" ? englishQuiz[question] : current;
   const isEnglish = language === "en";
+  const isBloomed = totalCorrect >= flowerGoal;
+  const flowerLevel = Math.min(
+    Math.floor(totalCorrect / (flowerGoal / 4)) + 1,
+    4,
+  );
 
   useEffect(() => {
     document.documentElement.lang = language;
@@ -345,12 +365,20 @@ function App() {
           <Brand subtle />
           <div className="splash-center">
             <svg
-              className="splash-mark"
+              xmlns="http://www.w3.org/2000/svg"
+              width="226"
+              height="158"
               viewBox="0 0 226 158"
-              aria-hidden="true"
+              fill="none"
             >
-              <path d="M146 114c13-2 21-1 27 0-8 4-20 7-28 5-5-2-5-5-2-10 2-3 5-5 9-8l-9 1-13 2c-11 7-23 11-36 14-15 3-30 3-43 1-13-2-26-8-28-17-1-5 2-11 9-15 8-5 17-7 27-7 10 0 19 3 24 8 1 1 2 2 2 3-2 0-3-1-4-2-4-2-8-4-13-5-8-1-18 0-26 4-6 3-9 8-8 12 1 3 3 5 6 7 11 8 31 9 49 7 12-1 25-5 35-11-23 0-36-11-38-26-2-13 2-28 13-41 6-7 14-13 24-14 6-1 11 1 12 5 2 5-2 11-8 16 12 2 21 8 25 15 1-3 3-7 5-10 7-9 19-15 31-17 10-1 19 1 22 7 6 9 0 21-9 31s-23 18-37 26l8 1c10 1 20-2 29-6l11-6 10-5c3-2 7-3 10-4 7-2 14-1 15 3 0 1-1 2-2 2s-2-1-2-2c-1-1-3-2-5-2-6 0-13 3-18 6l-9 5c-5 3-10 5-15 7-10 4-21 5-31 3l-6-1-5 3c-2 1-4 3-5 5-2 2-1 4 2 5 4 1 8 1 13 0ZM113 95c0 2 1 3 2 4 6-4 11-9 14-14 8-14-1-27-16-33-4-2-8-3-13-4l-3-1c-1 0-1-1 0-2 1-1 7 0 10 0 3-4 5-8 3-11-1-3-5-4-10-2-8 3-15 11-18 17-6 10-8 21-5 31 3 13 15 21 34 20 0-2 0-3-1-4-5 0-9-2-11-5-4-6 1-15 6-22l9 5c2 1 4 3 5 4 4 5 2 11-5 16Zm27 3 11-7c5-3 9-6 13-9 10-8 18-17 19-26 1-3 0-7-2-9-3-4-10-5-18-4-10 2-19 8-23 15-2 3-3 6-4 9 4 11-2 23-16 33l5 0c6-1 11-2 17-2ZM114 84c-1-1-2-3-4-4l-6-4c-5 6-7 14 0 18 2 1 4 2 6 2 5-3 6-8 4-12Z" />
-              <path d="M117 123c-5 9-16 6-26 5l-16-2c-12-1-43-2-56 10-2 2-3 4-3 6 1 2-1 4-4 5-7 1-6-10 3-16 16-11 40-10 53-9 7 1 13 2 18 3l14 2c3 1 6 0 9 0 4-1 6-4 8-8l1 0c0 1 0 3-1 4Z" />
+              <path
+                d="M146.09 114.065C148.003 113.782 149.815 113.388 151.584 113.73C144.172 117.22 133.12 119.204 127.34 116.484C124.153 114.98 123.664 112.086 125.767 109.094C127.741 106.284 130.898 103.985 134.206 101.739L125.743 102.585L113.505 103.992C103.484 110.466 92.1118 115.013 79.939 117.452C65.9609 120.25 52.1025 120.602 39.5798 118.527C27.4657 116.523 14.8099 111.181 12.7101 102.135C11.5953 97.3204 14.6993 92.07 20.6856 88.209C27.8624 83.5757 37.0229 81.2332 45.5414 81.1697C54.9136 81.0948 63.1439 83.694 68.4531 88.2671C69.4154 89.0985 69.9969 89.9488 69.882 91.3204C68.2815 90.9267 67.1354 90.3711 65.854 89.7585C62.0131 87.9308 57.9423 86.4478 53.1937 85.6557C45.6776 84.3915 36.4105 84.9707 28.8857 88.857C23.0426 91.8742 20.1283 96.5952 21.359 100.805C22.161 103.57 23.945 105.812 26.5884 107.736C37.033 115.336 56.0137 117.425 72.99 115.411C84.0957 114.089 96.9641 110.472 106.159 104.209C84.8204 104.556 72.8366 94.0895 70.6106 80.0556C68.7468 68.2868 72.3702 53.8185 82.5994 42.023C87.8459 35.9806 95.9792 30.0338 105.335 29.0878C110.877 28.5291 115.261 30.2659 116.632 33.7313C118.429 38.5223 114.932 44.08 109.923 48.5487C120.914 50.8882 129.178 56.0507 133.505 63.3253C134.591 60.1975 136.031 57.4536 138.248 54.6125C144.594 46.6319 155.85 40.5109 167.729 38.8635C176.949 37.587 184.835 39.9418 188.174 45.2649C193.461 53.6893 187.773 65.2236 179.057 74.2962C170.342 83.3688 157.767 91.1558 145.22 98.8686L152.226 99.7862C161.099 100.38 170.499 98.3252 178.929 94.0502L189.673 88.0106L198.808 82.9158C201.806 81.2467 205.109 80.075 208.507 79.1587C215.119 77.3828 221.999 78.1641 223.257 82.2995C223.513 83.1297 222.52 83.9947 221.574 84.2533C220.165 84.644 219.565 84.0074 219.181 83.1951C218.54 81.8811 216.451 81.3751 214.378 81.3024C209.115 81.1291 202.362 84.0323 197.579 86.8326L188.753 92.0069C184.255 94.6425 179.836 97.0455 174.821 99.0408C165.168 102.893 155.017 104.15 145.87 102.721L140.397 101.977L136.092 104.914C134.285 106.139 132.696 107.582 131.522 109.061C129.823 111.184 130.585 113.271 133.11 114.048C136.876 115.198 141.325 114.801 146.103 114.105L146.09 114.065ZM112.87 95.1741C112.949 96.6832 113.392 97.8498 114.208 99.1865C120.117 95.1302 125.064 90.4067 127.947 85.093C135.3 71.4902 126.701 59.0817 112.067 53.375C108.116 51.8441 103.932 50.9216 99.4229 50.1433L96.8271 49.4103C96.4063 49.2991 96.2057 48.5395 96.4601 48.2201C97.6743 46.7614 103.577 47.4823 106.704 47.8655C109.291 44.2092 110.957 40.5084 109.187 37.2207C107.768 34.5806 103.741 33.7303 99.3975 35.1242C91.352 37.7034 85.2448 45.4241 82.0768 51.1214C76.4425 61.2482 74.727 71.6563 77.0209 81.1131C79.9754 93.3123 91.4278 101.292 109.64 100.507C109.85 98.7887 109.679 97.5817 108.48 96.5276C103.583 96.6686 99.7878 94.9909 97.8648 92.079C94.2186 86.5222 98.9616 78.1926 104.112 71.8401L112.374 77.0474C114.273 78.247 116.037 79.4445 117.332 81.0277C120.759 85.2175 119.467 91.1686 112.87 95.1741ZM139.588 98.3162L150.324 91.4902C154.877 88.5967 159.01 85.6468 163.112 82.4327C172.446 74.8777 180.536 65.7902 181.909 56.7253C182.414 53.4041 181.83 50.3642 179.754 47.8281C176.494 43.8499 169.936 42.3671 162.592 43.8975C152.722 45.955 144.316 52.1064 139.862 58.8134C137.901 61.7729 136.544 64.6774 135.436 67.7352C138.853 78.6529 133.07 90.3151 119.574 99.9088L123.9 99.5496C129.221 98.8181 134.296 98.3266 139.6 98.3015L139.588 98.3162ZM114.412 83.6038C113.369 82.1839 111.998 81.0075 110.36 79.9464L104.812 76.3449C100.389 82.7139 98.0803 90.1616 104.721 93.8203C106.319 94.6967 108.353 95.3511 110.696 95.045C115.697 92.1885 116.575 86.9674 114.412 83.6038Z"
+                fill="#FD728A"
+              />
+              <path
+                d="M117.386 122.794C113.086 131.469 101.622 129.122 91.8828 127.897L76.4921 125.951C65.2663 124.538 34.5869 123.483 21.5354 135.228C19.692 136.881 18.3406 139.094 18.6623 140.955C19.0088 142.951 17.4543 144.777 14.639 145.35C7.60549 146.796 8.14127 135.995 17.5605 129.477C33.3123 118.585 57.3335 119.251 70.2451 120.516C76.7623 121.158 82.411 122.143 87.8353 123.056L101.977 125.42C104.919 125.915 107.606 125.744 110.191 125.133C113.737 124.314 116.307 121.637 117.604 117.667L118.076 117.237C118.404 116.938 118.884 119.747 117.38 122.774L117.386 122.794Z"
+                fill="#FD728A"
+              />
             </svg>
             <div className="app-title">BLOOMING ROUTE</div>
             <div className="touch">
@@ -363,9 +391,15 @@ function App() {
       {screen === "intro" && (
         <>
           <Brand subtle />
-          <section className="intro-copy">
+          <section className={`intro-copy ${isBloomed ? "is-bloomed" : ""}`}>
             <h1>
-              {isEnglish ? (
+              {isBloomed ? (
+                isEnglish ? (
+                  "The peony is in full bloom!"
+                ) : (
+                  "모란꽃이 활짝 피었습니다!"
+                )
+              ) : isEnglish ? (
                 <>
                   Help the flowers of <em>Haenggung-dong</em> bloom
                 </>
@@ -376,7 +410,23 @@ function App() {
               )}
             </h1>
             <p>
-              {isEnglish ? (
+              {isBloomed ? (
+                isEnglish ? (
+                  <>
+                    Together, {flowerGoal} lights brought the peony of
+                    Haenggung-dong
+                    <br />
+                    into full bloom. Thank you for being part of it!
+                  </>
+                ) : (
+                  <>
+                    함께 모은 {flowerGoal}개의 빛으로 행궁동의 모란꽃이
+                    피었습니다.
+                    <br />
+                    함께해주셔서 감사합니다!
+                  </>
+                )
+              ) : isEnglish ? (
                 <>
                   {totalCorrect} lights have been collected so far.
                   <br />
@@ -396,11 +446,24 @@ function App() {
                 </>
               )}
             </p>
+            {isBloomed && (
+              <img
+                className="intro-bloomed-art"
+                src={clearFlower}
+                alt={isEnglish ? "The completed peony flower" : "완성된 모란꽃"}
+              />
+            )}
             <button
               className="text-action"
               onClick={() => setScreen("question")}
             >
-              {isEnglish ? "Start the flower trail" : "꽃길 시작하기"}{" "}
+              {isBloomed
+                ? isEnglish
+                  ? "Take the quiz"
+                  : "퀴즈 풀기"
+                : isEnglish
+                  ? "Start the flower trail"
+                  : "꽃길 시작하기"}{" "}
               <span>→</span>
             </button>
           </section>
@@ -459,11 +522,11 @@ function App() {
             <h1>
               {selected === current.answer
                 ? isEnglish
-                  ? "Correct"
-                  : "정답"
+                  ? "Correct!"
+                  : "정답!"
                 : isEnglish
-                  ? "The correct answer"
-                  : "정답"}
+                  ? "The correct answer is..."
+                  : "정답은..."}
             </h1>
             <div className="result-letter">
               {String.fromCharCode(65 + current.answer)}
@@ -488,14 +551,40 @@ function App() {
       {screen === "complete" && (
         <>
           <Brand subtle />
-          <section className="complete-content">
+          <section
+            className={`complete-content ${isBloomed ? "is-bloomed" : ""}`}
+          >
             <h1>
-              {isEnglish
-                ? `You’ve collected ${sessionCorrect} lights`
-                : `빛 ${sessionCorrect}조각을 모았습니다`}
+              {isBloomed
+                ? isEnglish
+                  ? "The peony is in full bloom!"
+                  : "모란꽃이 활짝 피었습니다!"
+                : isEnglish
+                  ? `You’ve collected ${sessionCorrect} lights`
+                  : `빛 ${sessionCorrect}조각을 모았습니다`}
             </h1>
             <p>
-              {isEnglish ? (
+              {isBloomed ? (
+                isEnglish ? (
+                  <>
+                    Together, {flowerGoal} lights brought the peony of
+                    Haenggung-dong
+                    <br />
+                    into full bloom. Thank you for being part of it!
+                    <br />
+                    You added {sessionCorrect} lights to the journey.
+                  </>
+                ) : (
+                  <>
+                    함께 모은 {flowerGoal}개의 빛으로 행궁동의 모란꽃이
+                    피었습니다.
+                    <br />
+                    함께해주셔서 감사합니다!
+                    <br />
+                    이번 여정에서 빛 {sessionCorrect}개를 모았어요.
+                  </>
+                )
+              ) : isEnglish ? (
                 <>
                   {totalCorrect} lights collected so far
                   <br />
@@ -512,12 +601,49 @@ function App() {
                 </>
               )}
             </p>
-            <div className="complete-flower" aria-hidden="true">
-              <img className="complete-flower-art" src={clearFlower} alt="" />
+            <div
+              className={`complete-flower ${isBloomed ? "complete-flower-bloomed" : ""}`}
+              aria-hidden="true"
+            >
+              <img
+                className="complete-flower-art"
+                src={isBloomed ? clearFlower : levelFlowers[flowerLevel - 1]}
+                alt=""
+              />
+              {!isBloomed &&
+                lightOffsets.map(([x, y, delay]) => (
+                  <span
+                    key={`${x}-${y}`}
+                    className="light-particle"
+                    style={{
+                      "--light-x": x,
+                      "--light-y": y,
+                      "--light-delay": delay,
+                    }}
+                  />
+                ))}
             </div>
-            <button className="text-action" onClick={restart}>
-              {isEnglish ? "Back to the beginning" : "메인으로 돌아가기"}
-            </button>
+            <p className="complete-links-label">
+              {isEnglish ? "Quick links" : "바로가기"}
+            </p>
+            <a
+              className="text-action"
+              href="https://blog.naver.com/pride9877"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {isEnglish ? "Visit Paper Nori’s Blog" : "종이노리 블로그"}
+            </a>
+            <a
+              className="text-action"
+              href="https://smartstore.naver.com/paper_nori?NaPm=ct%3Dmum7l5sr%7Cci%3Dcheckout%7Ctr%3Dds%7Ctrx%3Dnull%7Chk%3D9e6d8cfd47f7211798aedd8017ac999b014c91fe"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {isEnglish
+                ? "Visit Paper Nori’s Smart Store"
+                : "종이노리 스마트스토어"}
+            </a>
           </section>
         </>
       )}
